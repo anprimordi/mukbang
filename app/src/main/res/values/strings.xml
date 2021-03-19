@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Mukbang</string>
+    <string name="splashscreen_app_logo_img">app logo</string>
+    <string name="app_fullname_title">Mobile UKBM Bangun Ruang</string>
+    <string name="action_start">mulai</string>
+    <string name="landing_dev_info_button">informasi pengembang</string>
+    <string name="login_background_img">login backround</string>
+    <string name="login_to_app_title">Login untuk masuk ke Mukbang</string>
+    <string name="login_input_name_hint">Masukkan Nama</string>
+    <string name="action_login">masuk</string>
+    <string name="login_already_text">Sudah pernah login?</string>
+    <string name="action_skip">Lewati</string>
+</resources>
