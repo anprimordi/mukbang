@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
 
     <data>
 
@@ -13,14 +13,15 @@
 
         <com.google.android.material.appbar.AppBarLayout
             android:id="@+id/appbar"
-
-            android:layout_height="wrap_content"
-            android:layout_width="match_parent">
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
 
             <com.google.android.material.appbar.MaterialToolbar
                 android:id="@+id/toolbar"
+                style="@style/Widget.MaterialComponents.Toolbar.Primary"
+                android:layout_width="match_parent"
                 android:layout_height="?attr/actionBarSize"
-                android:layout_width="match_parent" />
+                app:title="Peta Konsep" />
 
         </com.google.android.material.appbar.AppBarLayout>
 
@@ -29,26 +30,17 @@
             android:layout_height="match_parent"
             app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior">
 
-            <LinearLayout
-                android:orientation="vertical"
+            <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                tools:context=".ui.materials.MaterialsFragment">
+                tools:context=".ui.conceptmap.ConceptMapFragment">
 
                 <com.github.barteksc.pdfviewer.PDFView
-                    android:id="@+id/pdf_materials"
+                    android:id="@+id/pdfView_concept_map"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent" />
 
-                <Button
-                    android:layout_marginTop="8dp"
-                    android:layout_gravity="center"
-                    android:text="lanjut"
-                    android:id="@+id/button_next"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
-
-            </LinearLayout>
+            </androidx.constraintlayout.widget.ConstraintLayout>
 
         </androidx.core.widget.NestedScrollView>
 

@@ -1,4 +1,4 @@
-package com.makaryostudio.mukbang.ui.identity
+package com.makaryostudio.mukbang.ui.conceptmap
 
 import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
@@ -13,19 +13,18 @@ import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.NavigationUI
 import androidx.navigation.ui.setupWithNavController
 import com.github.barteksc.pdfviewer.util.FitPolicy
-import com.google.android.material.appbar.AppBarLayout
 import com.makaryostudio.mukbang.R
-import com.makaryostudio.mukbang.databinding.IdentityFragmentBinding
+import com.makaryostudio.mukbang.databinding.ConceptMapFragmentBinding
 
-class IdentityFragment : Fragment() {
+class ConceptMapFragment : Fragment() {
 
-    private lateinit var binding: IdentityFragmentBinding
+    private lateinit var binding: ConceptMapFragmentBinding
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        binding = DataBindingUtil.inflate(inflater, R.layout.identity_fragment, container, false)
+        binding = DataBindingUtil.inflate(inflater, R.layout.concept_map_fragment, container, false)
 
         setupToolbar(binding.toolbar)
         return binding.root
@@ -34,7 +33,7 @@ class IdentityFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        binding.pdfIdentity.fromAsset("identity.pdf")
+        binding.pdfViewConceptMap.fromAsset("concept_map.pdf")
             .enableSwipe(true)
             .enableDoubletap(true)
             .swipeHorizontal(false)

@@ -7,5 +7,6 @@ data class Quiz(
     var optionC: String = "",
     var optionD: String = "",
     var optionE: String = "",
-    var key: String = ""
+    var key: String = "",
+    var explanation: String = ""
 )

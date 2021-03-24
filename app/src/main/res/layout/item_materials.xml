@@ -48,7 +48,8 @@
                 android:layout_marginBottom="8dp"
                 android:ellipsize="end"
                 android:singleLine="true"
-                tools:text="@tools:sample/lorem/random" />
+                android:textStyle="italic"
+                tools:text="Belum selesai" />
 
         </LinearLayout>
 

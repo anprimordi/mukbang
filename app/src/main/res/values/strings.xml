@@ -10,4 +10,10 @@
     <string name="action_login">masuk</string>
     <string name="login_already_text">Sudah pernah login?</string>
     <string name="action_skip">Lewati</string>
+    <string name="manual_num_one_text">1.</string>
+    <string name="manual_num_two_text">2.</string>
+    <string name="manual_num_three_text">3.</string>
+    <string name="manual_instruction_one_text">Pelajari dan pahami materi mengenai bangun ruang sisi datar yang terdapat pada buku teks pembelajaran.</string>
+    <string name="manual_instruction_two_text">Ikuti langkah-langkah pembelajaran yang terdapat pada mobile-ukbm ini bersama kelompokmu.</string>
+    <string name="manual_instruction_three_text">Kerjakan soal-soal yang tersedia pada mobile-ukbm</string>
 </resources>

@@ -29,7 +29,7 @@ class LoginFragment : Fragment() {
 
         binding.buttonLogin.setOnClickListener {
             if (binding.editLoginName.text.toString() == "") {
-                binding.editLoginName.error = "Namanya nggak boleh kosong ya!"
+                binding.editLoginName.error = "Nama nggak boleh kosong ya!"
                 binding.editLoginName.requestFocus()
             } else {
                 val sharedPreferences =
