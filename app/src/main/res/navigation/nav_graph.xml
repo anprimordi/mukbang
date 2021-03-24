@@ -74,7 +74,11 @@
         android:label="MaterialsFragment" >
         <argument
             android:name="materialsCode"
-            app:argType="integer" />
+            app:argType="integer"
+            android:defaultValue="0" />
+        <action
+            android:id="@+id/action_materialsFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
     </fragment>
     <fragment
         android:id="@+id/quizFragment"

@@ -1,7 +1,6 @@
 package com.makaryostudio.mukbang.ui.home
 
 import android.content.Context
-import android.graphics.Color
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
@@ -18,14 +17,16 @@ class MaterialsAdapter(
         fun bindView(materials: Materials) {
             itemMaterialsBinding.imageItemThumbnail.setImageResource(materials.thumbnail)
             itemMaterialsBinding.imageItemTitle.text = materials.title
-
-            when (materials.completed) {
-                false -> itemMaterialsBinding.imageItemBody.text = "Belum dibaca"
-                true -> itemMaterialsBinding.apply {
-                    imageItemBody.text = "Selesai"
-                    imageItemBody.setTextColor(Color.GREEN)
+            itemMaterialsBinding.imageItemBody.text =
+                when (materials.completed) {
+                    false -> "Belum Selesai"
+                    true -> "Selesai"
                 }
-            }
+
+//            when (materials.completed) {
+//                false -> itemMaterialsBinding.imageItemBody.text = "Belum selesai"
+//                true -> itemMaterialsBinding.imageItemBody.text = "Selesai"
+//            }
         }
     }
 

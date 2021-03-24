@@ -3,7 +3,7 @@ package com.makaryostudio.mukbang.model.materials
 import com.makaryostudio.mukbang.R
 
 object MaterialsData {
-    val listMaterials: ArrayList<Materials> = arrayListOf(
+    var listMaterials: ArrayList<Materials> = arrayListOf(
         Materials(
             R.drawable.ic_cube_24,
             "Kubus",
