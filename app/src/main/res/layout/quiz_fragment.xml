@@ -5,6 +5,9 @@
 
     <data>
 
+        <variable
+            name="viewModel"
+            type="com.makaryostudio.mukbang.ui.quiz.QuizViewModel" />
     </data>
 
     <androidx.coordinatorlayout.widget.CoordinatorLayout
@@ -56,11 +59,17 @@
                         android:orientation="vertical"
                         android:padding="16dp">
 
+                        <ImageView
+                            android:id="@+id/image_question"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center" />
+
                         <TextView
                             android:id="@+id/text_question"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="@{taskSelectionViewModel.text}"
+                            android:text="@{viewModel.question}"
                             android:textAppearance="@style/TextAppearance.MaterialComponents.Body2"
                             tools:maxLines="10"
                             tools:text="@tools:sample/lorem/random" />
@@ -69,37 +78,34 @@
                             android:id="@+id/rg_answers"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_marginTop="16dp"
-                            app:layout_constraintEnd_toEndOf="parent"
-                            app:layout_constraintStart_toStartOf="@id/text_question"
-                            app:layout_constraintTop_toBottomOf="@id/text_question">
+                            android:layout_marginTop="16dp">
 
                             <com.google.android.material.radiobutton.MaterialRadioButton
                                 android:id="@+id/radio_answer_a"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:text="@{taskSelectionViewModel.answerA}"
+                                android:text="@{viewModel.optionA}"
                                 tools:text="@tools:sample/lorem" />
 
                             <com.google.android.material.radiobutton.MaterialRadioButton
                                 android:id="@+id/radio_answer_b"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:text="@{taskSelectionViewModel.answerB}"
+                                android:text="@{viewModel.optionB}"
                                 tools:text="@tools:sample/lorem" />
 
                             <com.google.android.material.radiobutton.MaterialRadioButton
                                 android:id="@+id/radio_answer_c"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:text="@{taskSelectionViewModel.answerC}"
+                                android:text="@{viewModel.optionC}"
                                 tools:text="@tools:sample/lorem" />
 
                             <com.google.android.material.radiobutton.MaterialRadioButton
                                 android:id="@+id/radio_answer_d"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:text="@{taskSelectionViewModel.answerD}"
+                                android:text="@{viewModel.optionD}"
                                 tools:text="@tools:sample/lorem" />
                         </RadioGroup>
 
@@ -109,10 +115,7 @@
                             android:layout_height="wrap_content"
                             android:layout_gravity="center"
                             android:layout_marginTop="16dp"
-                            android:text="koreksi"
-                            app:layout_constraintEnd_toEndOf="@id/rg_answers"
-                            app:layout_constraintStart_toStartOf="@id/rg_answers"
-                            app:layout_constraintTop_toBottomOf="@id/rg_answers" />
+                            android:text="koreksi" />
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
 
@@ -134,11 +137,18 @@
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@id/card_question" />
 
+                    <ImageView
+                        android:id="@+id/image_explanation"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center" />
+
                     <TextView
                         android:id="@+id/text_explanation_body"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="8dp"
+                        android:text="@{viewModel.explanation}"
                         android:textAppearance="@style/TextAppearance.MaterialComponents.Body2"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="@id/text_explanation_title"

@@ -10,7 +10,6 @@ import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.makaryostudio.mukbang.R
 import com.makaryostudio.mukbang.databinding.HomeFragmentBinding
-import com.makaryostudio.mukbang.model.materials.Materials
 import com.makaryostudio.mukbang.model.materials.MaterialsData
 import com.makaryostudio.mukbang.model.quiz.Quiz
 
@@ -19,7 +18,7 @@ class HomeFragment : Fragment() {
     private lateinit var binding: HomeFragmentBinding
     private lateinit var materialsAdapter: MaterialsAdapter
     private lateinit var quizAdapter: QuizAdapter
-    private lateinit var materialsList: ArrayList<Materials>
+    private lateinit var materialsList: ArrayList<com.makaryostudio.mukbang.model.materials.Materials>
     private lateinit var quizList: ArrayList<Quiz>
 
     override fun onCreateView(
