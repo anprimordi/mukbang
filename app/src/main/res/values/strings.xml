@@ -18,6 +18,7 @@
     <string name="manual_instruction_three_text">Kerjakan soal-soal yang tersedia pada mobile-ukbm</string>
     <string name="quiz_num">Soal dari %1$s dari %2$s</string>
     <string name="quiz_explanation_key">Jawaban %1$s</string>
+    <string name="dialog_score_title">Skor kamu adalah:</string>
 
     <string-array name="list_cube_quest">
         <item>Rama akan membuat 3 buah kerangka balok yang berukuran 6 cm x 6 cm x 3 cm terbuat dari kawat. Jika kawat yang tersedia 2 m, panjang sisa kawat adalah …</item>

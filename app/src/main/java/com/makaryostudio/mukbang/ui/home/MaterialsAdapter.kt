@@ -9,12 +9,13 @@ import com.makaryostudio.mukbang.model.materials.Materials
 
 class MaterialsAdapter(
     private val context: Context,
-    private val list: ArrayList<Materials>
+    private val list: ArrayList<Materials>,
+    private val itemClickListener: ItemClickListener
 ) : RecyclerView.Adapter<MaterialsAdapter.ViewHolder>() {
 
     class ViewHolder(private val itemMaterialsBinding: ItemMaterialsBinding) :
         RecyclerView.ViewHolder(itemMaterialsBinding.root) {
-        fun bindView(materials: Materials) {
+        fun bindView(materials: Materials, itemClickListener: ItemClickListener, position: Int) {
             itemMaterialsBinding.imageItemThumbnail.setImageResource(materials.thumbnail)
             itemMaterialsBinding.imageItemTitle.text = materials.title
             itemMaterialsBinding.imageItemBody.text =
@@ -23,10 +24,9 @@ class MaterialsAdapter(
                     true -> "Selesai"
                 }
 
-//            when (materials.completed) {
-//                false -> itemMaterialsBinding.imageItemBody.text = "Belum selesai"
-//                true -> itemMaterialsBinding.imageItemBody.text = "Selesai"
-//            }
+            itemMaterialsBinding.cardItemMaterial.setOnClickListener {
+                itemClickListener.clickListener(position)
+            }
         }
     }
 
@@ -37,7 +37,7 @@ class MaterialsAdapter(
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val listMaterials = list[position]
-        holder.bindView(listMaterials)
+        holder.bindView(listMaterials, itemClickListener, position)
     }
 
     override fun getItemCount(): Int = list.size

@@ -84,11 +84,14 @@
         android:id="@+id/quizFragment"
         android:name="com.makaryostudio.mukbang.ui.quiz.QuizFragment"
         android:label="quiz_fragment"
-        tools:layout="@layout/quiz_fragment" >
+        tools:layout="@layout/quiz_fragment">
         <argument
             android:name="quizCode"
             app:argType="integer"
             android:defaultValue="0" />
+        <action
+            android:id="@+id/action_quizFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
     </fragment>
     <fragment
         android:id="@+id/identityFragment"

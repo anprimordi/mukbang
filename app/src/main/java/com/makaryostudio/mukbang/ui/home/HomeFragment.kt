@@ -19,6 +19,7 @@ class HomeFragment : Fragment() {
     private lateinit var materialsAdapter: MaterialsAdapter
     private lateinit var quizAdapter: QuizAdapter
     private lateinit var materialsList: ArrayList<com.makaryostudio.mukbang.model.materials.Materials>
+    private lateinit var itemClickListener: ItemClickListener
     private lateinit var quizList: ArrayList<Quiz>
 
     override fun onCreateView(
@@ -35,8 +36,19 @@ class HomeFragment : Fragment() {
         val horizontalLayoutManager =
             LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
 
+        itemClickListener = object : ItemClickListener {
+            override fun clickListener(code: Int) {
+                findNavController().navigate(
+                    HomeFragmentDirections.actionHomeFragmentToMaterialsFragment(
+                        code
+                    )
+                )
+            }
+
+        }
+
         materialsList = MaterialsData.listMaterials
-        materialsAdapter = MaterialsAdapter(requireContext(), materialsList)
+        materialsAdapter = MaterialsAdapter(requireContext(), materialsList, itemClickListener)
 
         binding.rvMaterials.apply {
             layoutManager = horizontalLayoutManager

@@ -9,13 +9,19 @@ import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
+import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.makaryostudio.mukbang.R
+import com.makaryostudio.mukbang.databinding.DialogQuizScoreBinding
 import com.makaryostudio.mukbang.databinding.QuizFragmentBinding
+import com.makaryostudio.mukbang.model.section.Section
+import com.makaryostudio.mukbang.utils.QuizCodes
 
 class QuizFragment : Fragment() {
 
     private lateinit var binding: QuizFragmentBinding
+    private lateinit var dialogQuizScoreBinding: DialogQuizScoreBinding
     private lateinit var viewModel: QuizViewModel
     private lateinit var viewModelFactory: QuizViewModelFactory
     private val args: QuizFragmentArgs by navArgs()
@@ -30,7 +36,6 @@ class QuizFragment : Fragment() {
         viewModel = ViewModelProvider(this, viewModelFactory).get(QuizViewModel::class.java)
 
         binding.viewModel = viewModel
-
         binding.lifecycleOwner = viewLifecycleOwner
 
         return binding.root
@@ -46,9 +51,16 @@ class QuizFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         var choice: String
 
+        viewModel.number.observe(viewLifecycleOwner, { number ->
+            viewModel.totalQuest.observe(viewLifecycleOwner, { total ->
+                binding.textNumber.text =
+                    getString(R.string.quiz_num, number.toString(), total.toString())
+            })
+        })
+
         viewModel.key.observe(viewLifecycleOwner, { key ->
             Log.e("TESTING", key)
-            binding.rgAnswers.setOnCheckedChangeListener { group, checkedId ->
+            binding.rgAnswers.setOnCheckedChangeListener { _, checkedId ->
                 when (checkedId) {
                     binding.radioAnswerA.id -> {
                         choice = binding.radioAnswerA.text.toString()
@@ -142,12 +154,16 @@ class QuizFragment : Fragment() {
             binding.textExplanationKey.text = getString(R.string.quiz_explanation_key, it)
         })
 
+        viewModel.eventQuestCompleted.observe(viewLifecycleOwner, {
+            if (it) completeQuest()
+        })
+
         when (args.quizCode) {
-            1 -> when (viewModel.currentNumber+1) {
+            1 -> when (viewModel.currentNumber + 1) {
                 2 -> binding.imageQuestion.setImageResource(R.drawable.img_prism_1)
                 3 -> binding.imageQuestion.setImageResource(R.drawable.img_prism_2)
             }
-            2 -> when (viewModel.currentNumber+1) {
+            2 -> when (viewModel.currentNumber + 1) {
                 1 -> binding.imageExplanation.setImageResource(R.drawable.img_pyramid_1)
                 2 -> binding.imageExplanation.setImageResource(R.drawable.img_pyramid_2)
                 3 -> binding.imageExplanation.setImageResource(R.drawable.img_pyramid_3)
@@ -161,10 +177,51 @@ class QuizFragment : Fragment() {
             binding.rgAnswers.clearCheck()
             binding.layoutExplanation.visibility = View.GONE
         }
+
     }
 
-    private fun finishQuiz() {
-        viewModel.onQuestComplete(args.quizCode, viewModel.score.value!!)
-        // TODO: 26/03/2021 create score dialog 
+    private fun completeQuest() {
+        showScoreDialog(
+            viewModel.onQuestComplete(
+                args.quizCode,
+                viewModel.score.value!!.calculateScore(args.quizCode)
+            )
+        )
+    }
+
+    private fun showScoreDialog(section: Section) {
+        val builder = MaterialAlertDialogBuilder(requireContext())
+
+        dialogQuizScoreBinding = DataBindingUtil.inflate(
+            LayoutInflater.from(requireContext()),
+            R.layout.dialog_quiz_score,
+            null,
+            false
+        )
+
+        dialogQuizScoreBinding.textScore.text = section.score.toString()
+
+        builder.setView(dialogQuizScoreBinding.root)
+
+        builder.setTitle(section.sectionName)
+
+        builder.setPositiveButton("kembali ke beranda") { dialog, _ ->
+            dialog.dismiss()
+//            findNavController().navigateUp()
+            findNavController().navigate(R.id.action_quizFragment_to_homeFragment)
+        }
+
+        val alert = builder.create()
+        alert.show()
+    }
+
+    private fun Int.calculateScore(code: Int): Int {
+        return when (code) {
+            QuizCodes.CUBE -> this * 10
+            QuizCodes.PRISM -> this * 20
+            QuizCodes.PYRAMID -> this * 20
+            QuizCodes.FINAL -> this * 5
+            else -> 0
+        }
     }
 }
