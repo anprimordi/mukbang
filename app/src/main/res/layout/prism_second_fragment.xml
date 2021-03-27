@@ -33,10 +33,10 @@
                 android:layout_height="match_parent"
                 tools:context=".ui.materials.prism.PrismSecondFragment">
 
-                <TextView
+                <com.github.barteksc.pdfviewer.PDFView
+                    android:id="@+id/pdf_materials"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:text="Hello" />
+                    android:layout_height="match_parent" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 

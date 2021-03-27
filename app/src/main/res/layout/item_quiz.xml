@@ -27,7 +27,7 @@
                 android:scaleType="centerCrop"
                 app:shapeAppearance="?attr/shapeAppearanceMediumComponent"
                 app:shapeAppearanceOverlay="@style/roundedItemImageView"
-                tools:srcCompat="@drawable/bg_general" />
+                tools:srcCompat="@drawable/ic_quiz_cube_128" />
 
             <TextView
                 android:id="@+id/image_item_title"

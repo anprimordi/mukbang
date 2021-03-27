@@ -6,16 +6,21 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.makaryostudio.mukbang.databinding.ItemMaterialsBinding
 import com.makaryostudio.mukbang.model.materials.Materials
+import com.makaryostudio.mukbang.ui.home.MaterialsAdapter.ViewHolder
 
 class MaterialsAdapter(
     private val context: Context,
     private val list: ArrayList<Materials>,
-    private val itemClickListener: ItemClickListener
-) : RecyclerView.Adapter<MaterialsAdapter.ViewHolder>() {
+    private val materialsClickListener: MaterialsClickListener
+) : RecyclerView.Adapter<ViewHolder>() {
 
     class ViewHolder(private val itemMaterialsBinding: ItemMaterialsBinding) :
         RecyclerView.ViewHolder(itemMaterialsBinding.root) {
-        fun bindView(materials: Materials, itemClickListener: ItemClickListener, position: Int) {
+        fun bindView(
+            materials: Materials,
+            MaterialsClickListener: MaterialsClickListener,
+            position: Int
+        ) {
             itemMaterialsBinding.imageItemThumbnail.setImageResource(materials.thumbnail)
             itemMaterialsBinding.imageItemTitle.text = materials.title
             itemMaterialsBinding.imageItemBody.text =
@@ -25,7 +30,7 @@ class MaterialsAdapter(
                 }
 
             itemMaterialsBinding.cardItemMaterial.setOnClickListener {
-                itemClickListener.clickListener(position)
+                MaterialsClickListener.clickListener(position)
             }
         }
     }
@@ -37,7 +42,7 @@ class MaterialsAdapter(
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val listMaterials = list[position]
-        holder.bindView(listMaterials, itemClickListener, position)
+        holder.bindView(listMaterials, materialsClickListener, position)
     }
 
     override fun getItemCount(): Int = list.size

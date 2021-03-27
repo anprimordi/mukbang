@@ -1,5 +1,5 @@
 package com.makaryostudio.mukbang.ui.home
 
-interface ItemClickListener {
+interface MaterialsClickListener {
     fun clickListener(code: Int)
 }

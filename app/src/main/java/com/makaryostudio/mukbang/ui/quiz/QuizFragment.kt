@@ -60,6 +60,7 @@ class QuizFragment : Fragment() {
 
         viewModel.key.observe(viewLifecycleOwner, { key ->
             Log.e("TESTING", key)
+            binding.textExplanationKey.text = getString(R.string.quiz_explanation_key, key)
             binding.rgAnswers.setOnCheckedChangeListener { _, checkedId ->
                 when (checkedId) {
                     binding.radioAnswerA.id -> {
@@ -148,10 +149,6 @@ class QuizFragment : Fragment() {
 
         viewModel.explanation.observe(viewLifecycleOwner, {
             binding.textExplanationBody.text = it
-        })
-
-        viewModel.key.observe(viewLifecycleOwner, {
-            binding.textExplanationKey.text = getString(R.string.quiz_explanation_key, it)
         })
 
         viewModel.eventQuestCompleted.observe(viewLifecycleOwner, {

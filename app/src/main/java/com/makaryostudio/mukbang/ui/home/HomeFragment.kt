@@ -12,15 +12,16 @@ import com.makaryostudio.mukbang.R
 import com.makaryostudio.mukbang.databinding.HomeFragmentBinding
 import com.makaryostudio.mukbang.model.materials.MaterialsData
 import com.makaryostudio.mukbang.model.quiz.Quiz
+import com.makaryostudio.mukbang.model.quiz.QuizData
 
 class HomeFragment : Fragment() {
-
     private lateinit var binding: HomeFragmentBinding
     private lateinit var materialsAdapter: MaterialsAdapter
     private lateinit var quizAdapter: QuizAdapter
     private lateinit var materialsList: ArrayList<com.makaryostudio.mukbang.model.materials.Materials>
-    private lateinit var itemClickListener: ItemClickListener
     private lateinit var quizList: ArrayList<Quiz>
+    private lateinit var materialsClickListener: MaterialsClickListener
+    private lateinit var quizClickListener: QuizClickListener
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -36,25 +37,37 @@ class HomeFragment : Fragment() {
         val horizontalLayoutManager =
             LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
 
-        itemClickListener = object : ItemClickListener {
+        materialsClickListener = object : MaterialsClickListener {
             override fun clickListener(code: Int) {
                 findNavController().navigate(
-                    HomeFragmentDirections.actionHomeFragmentToMaterialsFragment(
-                        code
-                    )
+                    HomeFragmentDirections.actionHomeFragmentToMaterialsFragment(code)
                 )
             }
+        }
 
+        quizClickListener = object : QuizClickListener {
+            override fun clickListener(code: Int) {
+                findNavController().navigate(
+                    HomeFragmentDirections.actionHomeFragmentToQuizFragment(code)
+                )
+            }
         }
 
         materialsList = MaterialsData.listMaterials
-        materialsAdapter = MaterialsAdapter(requireContext(), materialsList, itemClickListener)
+        materialsAdapter = MaterialsAdapter(requireContext(), materialsList, materialsClickListener)
 
         binding.rvMaterials.apply {
             layoutManager = horizontalLayoutManager
             adapter = materialsAdapter
         }
 
+        quizList = QuizData.listQuiz
+        quizAdapter = QuizAdapter(requireContext(), quizList, quizClickListener)
+
+        binding.rvQuiz.apply {
+            layoutManager = horizontalLayoutManager
+            adapter = quizAdapter
+        }
 
         binding.layoutIdentity.setOnClickListener {
             findNavController().navigate(R.id.action_homeFragment_to_identityFragment)

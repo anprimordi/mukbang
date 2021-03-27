@@ -3,8 +3,8 @@ package com.makaryostudio.mukbang.ui.quiz
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.makaryostudio.mukbang.model.quiz.Quiz
-import com.makaryostudio.mukbang.model.quiz.QuizData
+import com.makaryostudio.mukbang.model.question.Question
+import com.makaryostudio.mukbang.model.question.QuestionData
 import com.makaryostudio.mukbang.model.section.Section
 import com.makaryostudio.mukbang.model.section.SectionData
 import com.makaryostudio.mukbang.utils.QuizCodes
@@ -53,14 +53,14 @@ class QuizViewModel(code: Int) : ViewModel() {
     val score: LiveData<Int>
         get() = _score
 
-    private val listQuizQuest: MutableList<Quiz>
+    private val listQuestionQuest: MutableList<Question>
     private val listSection = SectionData.listSection
 
     init {
-        listQuizQuest = QuizData.allQuiz[code]
+        listQuestionQuest = QuestionData.allQuiz[code]
         _code.value = code
         _number.value = 0
-        _totalQuestion.value = listQuizQuest.size
+        _totalQuestion.value = listQuestionQuest.size
         _question.value = ""
         _optionA.value = ""
         _optionB.value = ""
@@ -70,23 +70,23 @@ class QuizViewModel(code: Int) : ViewModel() {
         _explanation.value = ""
         _score.value = 0
 
-        showQuestion(listQuizQuest[currentNumber])
+        showQuestion(listQuestionQuest[currentNumber])
     }
 
-    private fun showQuestion(quiz: Quiz) {
-        _question.value = quiz.question
-        _optionA.value = quiz.optionA
-        _optionB.value = quiz.optionB
-        _optionC.value = quiz.optionC
-        _optionD.value = quiz.optionD
-        _key.value = quiz.key
-        _explanation.value = quiz.explanation
+    private fun showQuestion(question: Question) {
+        _question.value = question.question
+        _optionA.value = question.optionA
+        _optionB.value = question.optionB
+        _optionC.value = question.optionC
+        _optionD.value = question.optionD
+        _key.value = question.key
+        _explanation.value = question.explanation
     }
 
     fun nextQuestion() {
         if (currentNumber + 1 < totalQuest.value!!) {
             _number.value = _number.value!!.plus(1)
-            showQuestion(listQuizQuest[currentNumber++])
+            showQuestion(listQuestionQuest[currentNumber++])
         } else {
             onQuest()
         }
