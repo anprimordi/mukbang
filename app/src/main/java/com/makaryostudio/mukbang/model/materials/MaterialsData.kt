@@ -12,7 +12,7 @@ object MaterialsData {
         Materials(
             R.drawable.ic_prism_blue,
             "Prisma",
-            "mat_prism.pdf"
+            "mat_prism_1.pdf"
         ),
         Materials(
             R.drawable.ic_pyramid_purple,

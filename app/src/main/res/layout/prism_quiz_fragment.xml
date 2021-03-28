@@ -5,6 +5,9 @@
 
     <data>
 
+        <variable
+            name="viewModel"
+            type="com.makaryostudio.mukbang.ui.materials.prism.PrismQuizViewModel" />
     </data>
 
     <androidx.coordinatorlayout.widget.CoordinatorLayout
@@ -14,10 +17,12 @@
         <com.google.android.material.appbar.AppBarLayout
             android:id="@+id/appbar"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            app:liftOnScroll="true">
 
             <com.google.android.material.appbar.MaterialToolbar
                 android:id="@+id/toolbar"
+                style="@style/Widget.MaterialComponents.Toolbar.Primary"
                 android:layout_width="match_parent"
                 android:layout_height="?attr/actionBarSize" />
 
@@ -47,14 +52,13 @@
                     android:layout_marginStart="16dp"
                     android:layout_marginTop="16dp"
                     android:layout_marginEnd="16dp"
-                    android:text="@{viewModelThird.question}"
-                    android:textAppearance="@style/TextAppearance.MaterialComponents.Body2"
+                    android:text="Perhatikan model prisma dibawah ini dan cocokkan dengan jaring-jaring yang sebangun! (drag and drop)"
+                    android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
                     android:textStyle="bold"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
-                    tools:maxLines="3"
-                    tools:text="@tools:sample/lorem/random" />
+                    tools:maxLines="3" />
 
                 <com.google.android.material.card.MaterialCardView
                     android:id="@+id/card_prism_question"
@@ -67,6 +71,7 @@
                     android:foregroundTint="@android:color/transparent"
                     app:cardCornerRadius="8dp"
                     app:cardElevation="0dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toStartOf="@id/guide1"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/text_instruction"
@@ -89,36 +94,39 @@
                         <ImageView
                             android:id="@+id/image_question_one"
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content" />
+                            android:layout_height="128dp"
+                            android:layout_marginTop="24dp"
+                            android:src="@drawable/img_prism_question_octagon" />
 
                         <TextView
-                            android:id="@+id/text_third_key_one"
+                            android:id="@+id/text_question_one"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="4dp"
                             android:background="@drawable/container_drop_key"
                             android:gravity="center"
                             android:padding="8dp"
-                            android:text="@{viewModelThird.keyOne}"
+                            android:text="@{viewModel.questionOne}"
                             android:textAlignment="center"
                             android:textColor="@android:color/primary_text_light"
                             tools:text="key A" />
 
-
                         <ImageView
                             android:id="@+id/image_question_two"
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content" />
+                            android:layout_height="128dp"
+                            android:layout_marginTop="24dp"
+                            android:src="@drawable/img_prism_question_pentagon" />
 
                         <TextView
-                            android:id="@+id/text_third_key_two"
+                            android:id="@+id/text_question_two"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="4dp"
                             android:background="@drawable/container_drop_key"
                             android:gravity="center"
                             android:padding="8dp"
-                            android:text="@{viewModelThird.keyTwo}"
+                            android:text="@{viewModel.questionTwo}"
                             android:textAlignment="center"
                             android:textColor="@android:color/primary_text_light"
                             tools:text="key C" />
@@ -126,17 +134,19 @@
                         <ImageView
                             android:id="@+id/image_question_three"
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content" />
+                            android:layout_height="128dp"
+                            android:layout_marginTop="24dp"
+                            android:src="@drawable/img_prism_question_rectagon" />
 
                         <TextView
-                            android:id="@+id/text_third_key_three"
+                            android:id="@+id/text_question_three"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="4dp"
                             android:background="@drawable/container_drop_key"
                             android:gravity="center"
                             android:padding="8dp"
-                            android:text="@{viewModelThird.keyThree}"
+                            android:text="@{viewModel.questionThree}"
                             android:textAlignment="center"
                             android:textColor="@android:color/primary_text_light"
                             tools:text="key D" />
@@ -144,17 +154,19 @@
                         <ImageView
                             android:id="@+id/image_question_four"
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content" />
+                            android:layout_height="128dp"
+                            android:layout_marginTop="24dp"
+                            android:src="@drawable/img_prism_question_triagon" />
 
                         <TextView
-                            android:id="@+id/text_third_key_four"
+                            android:id="@+id/text_question_four"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="4dp"
                             android:background="@drawable/container_drop_key"
                             android:gravity="center"
                             android:padding="8dp"
-                            android:text="@{viewModelThird.keyFour}"
+                            android:text="@{viewModel.questionFour}"
                             android:textAlignment="center"
                             android:textColor="@android:color/primary_text_light"
                             tools:text="key E" />
@@ -193,54 +205,82 @@
                             android:textAlignment="center"
                             android:textStyle="bold" />
 
+                        <ImageView
+                            android:id="@+id/image_answer_one"
+                            android:layout_width="match_parent"
+                            android:layout_height="128dp"
+                            android:layout_marginTop="24dp"
+                            android:src="@drawable/img_prism_answer_pentagon" />
+
                         <TextView
-                            android:id="@+id/text_third_answer_one"
+                            android:id="@+id/text_answer_one"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="4dp"
                             android:background="@drawable/container_drop_key"
                             android:gravity="center"
                             android:padding="8dp"
-                            android:text="@{viewModelThird.answerOne}"
+                            android:text="@{viewModel.answerOne}"
                             android:textAlignment="center"
                             android:textColor="@android:color/primary_text_light"
                             tools:text="answer A" />
 
+                        <ImageView
+                            android:id="@+id/image_answer_two"
+                            android:layout_width="match_parent"
+                            android:layout_height="128dp"
+                            android:layout_marginTop="24dp"
+                            android:src="@drawable/img_prism_answer_octagon" />
+
                         <TextView
-                            android:id="@+id/text_third_answer_two"
+                            android:id="@+id/text_answer_two"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="4dp"
                             android:background="@drawable/container_drop_key"
                             android:gravity="center"
                             android:padding="8dp"
-                            android:text="@{viewModelThird.answerTwo}"
+                            android:text="@{viewModel.answerTwo}"
                             android:textAlignment="center"
                             android:textColor="@android:color/primary_text_light"
                             tools:text="answer B" />
 
+                        <ImageView
+                            android:id="@+id/image_answer_three"
+                            android:layout_width="match_parent"
+                            android:layout_height="128dp"
+                            android:layout_marginTop="24dp"
+                            android:src="@drawable/img_prism_answer_triagon" />
+
                         <TextView
-                            android:id="@+id/text_third_answer_three"
+                            android:id="@+id/text_answer_three"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="4dp"
                             android:background="@drawable/container_drop_key"
                             android:gravity="center"
                             android:padding="8dp"
-                            android:text="@{viewModelThird.answerThree}"
+                            android:text="@{viewModel.answerThree}"
                             android:textAlignment="center"
                             android:textColor="@android:color/primary_text_light"
                             tools:text="answer C" />
 
+                        <ImageView
+                            android:id="@+id/image_answer_four"
+                            android:layout_width="match_parent"
+                            android:layout_height="128dp"
+                            android:layout_marginTop="24dp"
+                            android:src="@drawable/img_prism_answer_rectagon" />
+
                         <TextView
-                            android:id="@+id/text_third_answer_four"
+                            android:id="@+id/text_answer_four"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="4dp"
                             android:background="@drawable/container_drop_key"
                             android:gravity="center"
                             android:padding="8dp"
-                            android:text="@{viewModelThird.answerFour}"
+                            android:text="@{viewModel.answerFour}"
                             android:textAlignment="center"
                             android:textColor="@android:color/primary_text_light"
                             tools:text="answer D" />
@@ -248,6 +288,16 @@
                     </LinearLayout>
 
                 </com.google.android.material.card.MaterialCardView>
+
+                <Button
+                    android:id="@+id/button_next"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="16dp"
+                    android:text="lanjut"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 

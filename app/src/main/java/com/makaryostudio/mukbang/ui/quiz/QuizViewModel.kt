@@ -5,6 +5,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.makaryostudio.mukbang.model.question.Question
 import com.makaryostudio.mukbang.model.question.QuestionData
+import com.makaryostudio.mukbang.model.quiz.QuizData
 import com.makaryostudio.mukbang.model.section.Section
 import com.makaryostudio.mukbang.model.section.SectionData
 import com.makaryostudio.mukbang.utils.QuizCodes
@@ -104,6 +105,7 @@ class QuizViewModel(code: Int) : ViewModel() {
             QuizCodes.FINAL -> Section("Evaluasi", score)
             else -> Section()
         }
+        QuizData.listQuiz[code].completed = true
         _eventQuestCompleted.value = false
         return listSection[code]
     }

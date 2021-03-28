@@ -62,6 +62,9 @@
         <action
             android:id="@+id/action_homeFragment_to_finalQuizFragment"
             app:destination="@id/finalQuizFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_conceptMapFragment"
+            app:destination="@id/conceptMapFragment" />
     </fragment>
     <fragment
         android:id="@+id/developerFragment"
@@ -75,7 +78,7 @@
     <fragment
         android:id="@+id/materialsFragment"
         android:name="com.makaryostudio.mukbang.ui.materials.MaterialsFragment"
-        android:label="MaterialsFragment" >
+        android:label="MaterialsFragment">
         <argument
             android:name="materialsCode"
             app:argType="integer"
@@ -84,6 +87,9 @@
             android:id="@+id/action_materialsFragment_to_homeFragment"
             app:destination="@id/homeFragment"
             app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_materialsFragment_to_prismQuizFragment"
+            app:destination="@id/prismQuizFragment" />
     </fragment>
     <fragment
         android:id="@+id/quizFragment"
@@ -132,4 +138,24 @@
         android:name="com.makaryostudio.mukbang.ui.reference.ReferenceFragment"
         android:label="reference_fragment"
         tools:layout="@layout/reference_fragment" />
+    <fragment
+        android:id="@+id/prismSecondFragment"
+        android:name="com.makaryostudio.mukbang.ui.materials.prism.PrismSecondFragment"
+        android:label="PrismSecondFragment">
+        <action
+            android:id="@+id/action_prismSecondFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/prismQuizFragment"
+        android:name="com.makaryostudio.mukbang.ui.materials.prism.PrismQuizFragment"
+        android:label="PrismQuizFragment">
+        <action
+            android:id="@+id/action_prismQuizFragment_to_prismSecondFragment"
+            app:destination="@id/prismSecondFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/conceptMapFragment"
+        android:name="com.makaryostudio.mukbang.ui.conceptmap.ConceptMapFragment"
+        android:label="ConceptMapFragment" />
 </navigation>
