@@ -12,7 +12,9 @@
         <action
             android:id="@+id/action_splashScreenFragment_to_landingFragment"
             app:destination="@id/landingFragment"
-            app:launchSingleTop="true" />
+            app:launchSingleTop="true"
+            app:popUpTo="@id/splashScreenFragment"
+            app:popUpToInclusive="true" />
     </fragment>
     <fragment
         android:id="@+id/landingFragment"

@@ -3,10 +3,10 @@ package com.makaryostudio.mukbang.model.question
 object QuestionData {
     private val listCubeQuestion = arrayListOf(
         "Rama akan membuat 3 buah kerangka balok yang berukuran 6 cm x 6 cm x 3 cm terbuat dari kawat. Jika kawat yang tersedia 2 m, panjang sisa kawat adalah …",
-        "Sebuah kubus memiliki volume 343 cm3. Jika panjang rusuk kubus tersebut diperbesar menjadi 4 kali panjang rusuk semula. Maka volume kubus yang baru adalah … cm3",
-        "Sebuah balok mempunyai luas permukaan 376 cm2. Jika panjang balok 10 cm dan lebar balok 6 cm. Tinggi dari balok tersebut adalah … cm",
-        "Volume sebuah kubus sama dengan volume balok yaitu 1.000 cm3. Diketahui panjang balok dua kali panjang kubus dan tinggi balok setengah kali lebar balok. Luas permukaan balok adalah … cm²",
-        "Suatu balok memiliki luas permukaan 198 cm2. Jika lebar dan tinggi balok masing-masing 6 cm dan 3 cm, tentukan panjang balok tersebut!",
+        "Sebuah kubus memiliki volume 343 cm³. Jika panjang rusuk kubus tersebut diperbesar menjadi 4 kali panjang rusuk semula. Maka volume kubus yang baru adalah … cm³",
+        "Sebuah balok mempunyai luas permukaan 376 cm². Jika panjang balok 10 cm dan lebar balok 6 cm. Tinggi dari balok tersebut adalah … cm",
+        "Volume sebuah kubus sama dengan volume balok yaitu 1.000 cm³. Diketahui panjang balok dua kali panjang kubus dan tinggi balok setengah kali lebar balok. Luas permukaan balok adalah … cm²",
+        "Suatu balok memiliki luas permukaan 198 cm². Jika lebar dan tinggi balok masing-masing 6 cm dan 3 cm, tentukan panjang balok tersebut!",
         "Dua buah kubus masing-masing panjang rusuknya 6 cm dan 10 cm. Hitunglah perbandingan luas permukaan dua kubus tersebut adalah …",
         "Made akan membuat 15 buah kerangka balok yang masing-masing berukuran 30 cm x 20 cm x 15 cm. Jumlah panjang kawat yang diperlukan untuk membuat balok tersebut adalah … meter",
         "Made akan membuat 15 buah kerangka balok yang masing-masing berukuran 30 cm x 20 cm x 15 cm. Bahan yang akan digunakan terbuat dari kawat yang harganya Rp 1.500/m. Biaya yang diperlukan untuk membeli bahan/kawat adalah …",
@@ -92,47 +92,47 @@ object QuestionData {
                 "= 200 cm – 180 cm\n" +
                 "= 20 cm\n" +
                 "Kita harus mencari panjang rusuk awal (s0), yakni:\n" +
-                "V0 = s3\n" +
-                "343 cm3 = s3\n" +
-                "(7 cm)3 = s3\n" +
+                "V0 = s³\n" +
+                "343 cm³ = s³\n" +
+                "(7 cm)³ = s³\n" +
                 "s0  = 7 cm\n" +
                 "Sekarang kita hitung panjang jika rusuk tersebut diperbesar 4 kali dari panjang semula, maka\n" +
                 "s1 = 4s0\n" +
                 "s1 = 4.7 cm\n" +
                 "s1 = 28 cm\n" +
                 "Sekarang kita hitung volume kubus setelah rusuknya diperbesar 4 kali yakni:\n" +
-                "V1 = s3\n" +
-                "V1 = (28 cm)3\n" +
-                "V1 = 21.952 cm3.\n" +
-                "Jadi volume kubus setelah diperbesar 4 kali adalah 21.952 cm3",
+                "V1 = s³\n" +
+                "V1 = (28 cm)³\n" +
+                "V1 = 21.952 cm³.\n" +
+                "Jadi volume kubus setelah diperbesar 4 kali adalah 21.952 cm³",
         "Untuk mencari tinggi balok tersebut gunakan rumus luas permukaan balok yaitu:\n" +
                 "L  = 2(p.l + p.t + l.t)\n" +
-                "376 cm2 = 2(10 cm.6 cm + 10 cm.t + 6 cm.t)\n" +
-                "376 cm2 = 2 (60 cm2 +10 cm.t +6 cm.t)\n" +
-                "376 cm2 = 2(60 cm2 + 16 cm.t)\n" +
-                "376 cm2 = 120 cm2 + 32 cm.t\n" +
-                "376 cm2 – 120 cm2 = 32 cm.t\n" +
-                "256 cm2 = 32 cm.t\n" +
-                "t = 256 cm2/32 cm\n" +
+                "376 cm² = 2(10 cm.6 cm + 10 cm.t + 6 cm.t)\n" +
+                "376 cm² = 2 (60 cm² +10 cm.t +6 cm.t)\n" +
+                "376 cm² = 2(60 cm² + 16 cm.t)\n" +
+                "376 cm² = 120 cm² + 32 cm.t\n" +
+                "376 cm² – 120 cm² = 32 cm.t\n" +
+                "256 cm² = 32 cm.t\n" +
+                "t = 256 cm²/32 cm\n" +
                 "t = 8 cm\n" +
                 "\n" +
                 "Jadi tinggi balok tersebut adalah 8 cm.",
         "Untuk mencari tinggi balok tersebut gunakan rumus luas permukaan balok yaitu:\n" +
                 "L = 2(p.l + p.t + l.t)\n" +
-                "376 cm2 = 2(10 cm.6 cm + 10 cm.t + 6 cm.t)\n" +
-                "376 cm2 = 2 (60 cm2 +10 cm.t +6 cm.t)\n" +
-                "376 cm2 = 2(60 cm2 + 16 cm.t)\n" +
-                "376 cm2 = 120 cm2 + 32 cm.t\n" +
-                "376 cm2 – 120 cm2 = 32 cm.t\n" +
-                "256 cm2 = 32 cm.t\n" +
-                "t = 256 cm2/32 cm\n" +
+                "376 cm² = 2(10 cm.6 cm + 10 cm.t + 6 cm.t)\n" +
+                "376 cm² = 2 (60 cm² +10 cm.t +6 cm.t)\n" +
+                "376 cm² = 2(60 cm² + 16 cm.t)\n" +
+                "376 cm² = 120 cm² + 32 cm.t\n" +
+                "376 cm² – 120 cm² = 32 cm.t\n" +
+                "256 cm² = 32 cm.t\n" +
+                "t = 256 cm²/32 cm\n" +
                 "t = 8 cm\n" +
                 "\n" +
                 "Jadi tinggi balok tersebut adalah 8 cm.",
         "Untuk menjawab soal ini anda harus paham terlebih dahulu konsep volume kubus dan  volume balok. Karena volume balok sama dengan volume kubus maka Anda harus mencari panjang rusuk dari kubus tersebut yaitu\n" +
-                "V = s3\n" +
-                "1000 cm3 = s3\n" +
-                "(10 cm)3 = s3\n" +
+                "V = s³\n" +
+                "1000 cm³ = s³\n" +
+                "(10 cm)³ = s³\n" +
                 "s = 10 cm\n" +
                 "\n" +
                 "Diketahui bahwa panjang balok sama dengan 2 kali panjang kubus, yaitu\n" +
@@ -143,8 +143,8 @@ object QuestionData {
                 "t = ½ l atau l = 2.t\n" +
                 "Kita sekarang akan mencari tinggi (t) pada balok dengan menggunakan konsep volume balok, yaitu\n" +
                 "V = p.l.t\n" +
-                "1000 cm3 = 20 cm.2t.t\n" +
-                "1000 cm3 = 40 cm.t2\n" +
+                "1000 cm³ = 20 cm.2t.t\n" +
+                "1000 cm³ = 40 cm.t2\n" +
                 "t = √(1000 cm3/40 cm)\n" +
                 "t = √25 cm2\n" +
                 "t = 5 cm\n" +
@@ -155,25 +155,25 @@ object QuestionData {
                 "Sekarang kita akan mencari luas permukaan balok dengan menggunakan rumus:\n" +
                 "L = 2(p.l + p.t + l.t)\n" +
                 "L = 2(20 cm.10 cm + 20 cm.5 cm + 10 cm.5 cm)\n" +
-                "L = 2 (200 cm2 +100 cm2 +50 cm2)\n" +
-                "L = 2(350 cm2)\n" +
-                "L = 700 cm2\n" +
+                "L = 2 (200 cm² +100 cm² +50 cm²)\n" +
+                "L = 2(350 cm²)\n" +
+                "L = 700 cm²\n" +
                 "\n" +
-                "Jadi luas permukaan balok tersebut adalah 700 cm2",
+                "Jadi luas permukaan balok tersebut adalah 700 cm²",
         "Untuk mencari panjang balok tersebut gunakan rumus luas permukaan balok yaitu:\n" +
                 "L = 2(p.l + p.t + l.t)\n" +
-                "198 cm2 = 2(p.6 cm + p.3 cm + 6 cm.3 cm)\n" +
-                "198 cm2 = 2(6p cm + 3p cm + 18 cm2)\n" +
-                "198 cm2 = 2(9p cm + 18 cm2)\n" +
-                "198 cm2 = 18p cm + 36 cm2\n" +
-                "198 cm2 - 36 cm2 = 18p cm\n" +
-                "162 cm2 = 18p cm\n" +
+                "198 cm² = 2(p.6 cm + p.3 cm + 6 cm.3 cm)\n" +
+                "198 cm² = 2(6p cm + 3p cm + 18 cm²)\n" +
+                "198 cm² = 2(9p cm + 18 cm²)\n" +
+                "198 cm² = 18p cm + 36 cm²\n" +
+                "198 cm² - 36 cm² = 18p cm\n" +
+                "162 cm² = 18p cm\n" +
                 "p = 162 cm2/18 cm\n" +
                 "p = 9 cm\n" +
                 "\n" +
                 "Jadi, panjang balok tersebut adalah 9 cm\n",
-        "L1 = 6s2 = 6(6 cm)2 = 216 cm2\n" +
-                "L2 = 6s2 = 6(10 cm)2 = 600 cm2\n" +
+        "L1 = 6s² = 6(6 cm)² = 216 cm²\n" +
+                "L2 = 6s² = 6(10 cm)² = 600 cm²\n" +
                 "\n" +
                 "L1 : L2 = 216 : 600 = 9 : 25\n" +
                 "\n" +
@@ -224,42 +224,42 @@ object QuestionData {
     )
 
     private val listPrismQuestion = arrayListOf(
-        "Sebuah prisma tegak memiliki volume 432 cm3. Alas prisma tersebut berbentuk  segitiga siku-siku yang panjang sisi siku-sikunya 6 cm dan 8 cm. Tinggi prisma tersebut adalah…",
-        "Dari gambar prisma segiempat tersebut, volume prisma ABCD.EFGH adalah … cm3",
+        "Sebuah prisma tegak memiliki volume 432 cm³. Alas prisma tersebut berbentuk  segitiga siku-siku yang panjang sisi siku-sikunya 6 cm dan 8 cm. Tinggi prisma tersebut adalah…",
+        "Dari gambar prisma segiempat tersebut, volume prisma ABCD.EFGH adalah … cm³",
         "Sebuah tenda memiliki ukuran seperti pada gambar di atas, volume tenda tersebut adalah … ",
         "Jika panjang rusuk prisma segi enam beraturan 6 cm dan tingginya 10√3 cm, maka luas permukaan prisma segi enam beraturan tersebut adalah …",
-        "Sebuah prisma alasnya berbentuk segitiga siku-siku dengan sisi miring 26 cm dan salah satu sisi siku-sikunya 10 cm. Jika luas permukaan prisma 960 cm2,maka tinggi prisma tersebut adalah …",
+        "Sebuah prisma alasnya berbentuk segitiga siku-siku dengan sisi miring 26 cm dan salah satu sisi siku-sikunya 10 cm. Jika luas permukaan prisma 960 cm²,maka tinggi prisma tersebut adalah …",
     )
 
     private val listPrismOptionA = arrayListOf(
         "10 cm",
         "798",
-        "2,5 m<sup>3</sup>",
-        "468√3 cm<sup>2</sup>",
+        "2,5 m³",
+        "468√3 cm²",
         "6 cm"
     )
 
     private val listPrismOptionB = arrayListOf(
         "18 cm",
         "898",
-        "7,5 m3",
-        "568√3 cm2",
+        "7,5 m³",
+        "568√3 cm²",
         "8 cm"
     )
 
     private val listPrismOptionC = arrayListOf(
         "32 cm",
         "1200",
-        "7,5 m3",
-        "668√3 cm",
+        "7,5 m³",
+        "668√3 cm²",
         "10 cm"
     )
 
     private val listPrismOptionD = arrayListOf(
         "40 cm",
         "1366",
-        "10 m3",
-        "868√3 cm2",
+        "10 m³",
+        "868√3 cm²",
         "12 cm"
     )
 
@@ -274,50 +274,50 @@ object QuestionData {
     private val listPrismExplanation = arrayListOf(
         "Hitung luas segitiga terlebih dahulu, yakni:\n" +
                 "L∆ = ½ x 6 cm x 8 cm\n" +
-                "L∆ = 24 cm2\n" +
+                "L∆ = 24 cm²\n" +
                 "\n" +
                 "Hitung volume prisma dengan rumus, yakni:\n" +
                 "V = L∆ x t\n" +
-                "432 cm3 = 24 cm2 x t\n" +
-                "t = 432 cm3/24 cm2\n" +
+                "432 cm³ = 24 cm² x t\n" +
+                "t = 432 cm³/24 cm²\n" +
                 "t = 18 cm\n",
         "Luas alas prisma (luas ABCD) merupakan luas trapesium maka:\n" +
                 "L. ABCD = ½ (CD + AB) x AD\n" +
                 "L. ABCD = ½ (7 cm + 12 cm) x 6 cm\n" +
-                "L. ABCD = 57 cm2\n" +
+                "L. ABCD = 57 cm²\n" +
                 "\n" +
                 "Volume prisma ABCD.EFGH maka:\n" +
                 "V = L. ABCD x AE\n" +
-                "V = 57 cm2 x 14 cm\n" +
-                "V = 798 cm3\n",
+                "V = 57 cm² x 14 cm\n" +
+                "V = 798 cm³\n",
         "Luas alas tenda merupakan luas segitiga maka:\n" +
                 "L. alas = ½ x 2 m x 2,5 m\n" +
-                "L. alas = 2,5 m2\n" +
+                "L. alas = 2,5 m²\n" +
                 "\n" +
                 "Volume tenda yaitu:\n" +
                 "V = L. alas x tinggi\n" +
-                "V = 2,5 m2 x 3 m\n" +
-                "V = 7,5 m3\n",
+                "V = 2,5 m² x 3 m\n" +
+                "V = 7,5 m³\n",
         "L = 3r(r√3+2t)\n" +
                 "L = 3 . (6 cm)(( 6 cm)√3+2 . 10√3)\n" +
                 "L = (18 cm)(6√3 cm + 20√3 cm)\n" +
                 "L = (18 cm)(26√3 cm)\n" +
-                "L = 468√3 cm2\n",
-        "Cari panjang siku-siku yang kedua dengan teorema Phytagoras, yakni:\n" +
+                "L = 468√3 cm²\n",
+        "Cari panjang siku-siku yang kedua dengan teorema Pythagoras, yakni:\n" +
                 "s = √(262 – 102)\n" +
                 "s = √(676 – 100)\n" +
                 "s = √576\n" +
                 "s = 24 cm\n" +
                 "L∆ = ½ x 10 cm x 24 cm\n" +
-                "L∆ = 120 cm2\n" +
+                "L∆ = 120 cm²\n" +
                 "\n" +
                 "K∆ = 10 cm + 24 cm + 26 cm\n" +
                 "K∆ = 60 cm\n" +
                 "\n" +
                 "L = 2 x L∆ + K∆ . t\n" +
-                "960 cm2 = 2 x 120 cm2 + 60 cm . t\n" +
-                "960 cm2 – 240 cm2 = 60 cm . t\n" +
-                "720 cm2 = 60 cm . t\n" +
+                "960 cm² = 2 x 120 cm² + 60 cm . t\n" +
+                "960 cm² – 240 cm² = 60 cm . t\n" +
+                "720 cm² = 60 cm . t\n" +
                 "t = 12 cm\n"
     )
 
@@ -330,33 +330,33 @@ object QuestionData {
     )
 
     private val listPyramidOptionA = arrayListOf(
-        "2.880 cm3",
+        "2.880 cm³",
         "12 cm",
-        "800 cm2",
+        "800 cm²",
         "10√2 cm",
         "2√7 cm"
     )
 
     private val listPyramidOptionB = arrayListOf(
-        "1.728 cm3",
+        "1.728 cm³",
         "18 cm",
-        "900 cm2",
+        "900 cm²",
         "8√2 cm",
         "4√7 cm"
     )
 
     private val listPyramidOptionC = arrayListOf(
-        "864 cm3",
+        "864 cm³",
         "24 cm",
-        "1000 cm2",
+        "1000 cm²",
         "6√2 cm",
         "6√7 cm"
     )
 
     private val listPyramidOptionD = arrayListOf(
-        "288 cm3",
+        "288 cm³",
         "26 cm",
-        "1200 cm2",
+        "1200 cm²",
         "4√2 cm",
         "8√7 cm"
     )
@@ -597,32 +597,6 @@ object QuestionData {
     )
 
     private val listFinalExplanation = arrayListOf(
-        "",
-        "",
-        "",
-        "",
-        "",
-
-        "",
-        "",
-        "",
-        "",
-        "",
-
-        "",
-        "",
-        "",
-        "",
-        "",
-
-        "",
-        "",
-        "",
-        "",
-        ""
-    )
-
-    private val list = arrayListOf(
         "",
         "",
         "",

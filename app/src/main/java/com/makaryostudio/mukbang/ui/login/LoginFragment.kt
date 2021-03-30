@@ -32,19 +32,26 @@ class LoginFragment : Fragment() {
                 binding.editLoginName.error = "Nama nggak boleh kosong ya!"
                 binding.editLoginName.requestFocus()
             } else {
-                val sharedPreferences =
+                val userNameSharedPreferences =
                     requireActivity().getSharedPreferences("username", Context.MODE_PRIVATE)
-                with(sharedPreferences.edit()) {
+                with(userNameSharedPreferences.edit()) {
                     putString("username", binding.editLoginName.text.toString())
                     apply()
                 }
 
                 findNavController().navigate(R.id.action_loginFragment_to_homeFragment)
+                val oldUserSharedPreferences =
+                    requireActivity().getSharedPreferences("oldUser", Context.MODE_PRIVATE)
+                        ?: return@setOnClickListener
+                with(oldUserSharedPreferences.edit()) {
+                    putBoolean("oldUser", true)
+                    apply()
+                }
             }
         }
 
         binding.textSkip.setOnClickListener {
-            if (oldUser()) {
+            if (!oldUser()) {
                 Snackbar.make(
                     binding.root,
                     "Kamu belum pernah login sebelumnya",

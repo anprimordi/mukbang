@@ -18,11 +18,22 @@
     <string name="manual_instruction_three_text">Kerjakan soal-soal yang tersedia pada mobile-ukbm</string>
     <string name="quiz_num">Soal dari %1$s dari %2$s</string>
     <string name="quiz_explanation_key">Jawaban %1$s</string>
-    <string name="dialog_score_title">Skor kamu adalah:</string>
+    <string name="dialog_score_title">%1$s, skor kamu adalah:</string>
     <string name="error_must_be_answered">Harus dijawab ya!</string>
     <string name="error_incorrect_answer">Ada yang masih salah nih!</string>
     <string name="introduction_title">Pendahuluan</string>
-    <string name="home_view_score_text">Llihat skor kamu di sini</string>
+    <string name="home_view_score_text">Lihat skor kamu di sini</string>
+    <string name="score_username">Hai, %1$s!</string>
+    <string name="quiz_title">Kuis</string>
+    <string name="quiz_subtitle">Uji kemampuanmu di sini!</string>
+    <string name="materials_subtitle">Yuk mulai belajar!</string>
+    <string name="materials_title">Materi</string>
+    <string name="ref_1_text">Kementerian Pendidikan dan Kebudayaan. 2016. Buku Siswa Mata Pelajaran Matematika Pekerti Jakarta: Kementerian Pendidikan dan Kebudayaan.</string>
+    <string name="ref_2_text">Kementerian Pendidikan dan Kebudayaan. 2016. Buku Guru Mata Pelajaran Matematika Jakarta: Kementerian Pendidikan dan Kebudayaan</string>
+    <string name="ref_3_text">http://fikri-ravansyah07.blogspot.com/2014/05/soal-dan-pembahasan-matematika-kubus.html</string>
+    <string name="ref_4_text">\thttps://idschool.net/contoh-soal-bangun-ruang-sisi-datar-matematika-smp-2/</string>
+    <string name="ref__text">https://youtu.be/1XOvoj0_DDs</string>
+    <string name="ref_title">Daftar Pustaka</string>
 
     <!--    <string-array name="list_cube_quest">-->
     <!--        <item>Rama akan membuat 3 buah kerangka balok yang berukuran 6 cm x 6 cm x 3 cm terbuat dari kawat. Jika kawat yang tersedia 2 m, panjang sisa kawat adalah …</item>-->

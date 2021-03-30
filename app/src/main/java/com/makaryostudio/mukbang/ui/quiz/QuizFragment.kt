@@ -1,11 +1,17 @@
 package com.makaryostudio.mukbang.ui.quiz
 
+import android.content.ContentValues
+import android.content.Context
+import android.content.Intent
+import android.graphics.Bitmap
 import android.os.Bundle
+import android.provider.MediaStore
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.core.view.drawToBitmap
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
@@ -22,6 +28,7 @@ import com.makaryostudio.mukbang.databinding.QuizFragmentBinding
 import com.makaryostudio.mukbang.model.section.Section
 import com.makaryostudio.mukbang.model.section.SectionData
 import com.makaryostudio.mukbang.utils.QuizCodes
+import java.io.OutputStream
 
 class QuizFragment : Fragment() {
 
@@ -29,6 +36,7 @@ class QuizFragment : Fragment() {
     private lateinit var dialogQuizScoreBinding: DialogQuizScoreBinding
     private lateinit var viewModel: QuizViewModel
     private lateinit var viewModelFactory: QuizViewModelFactory
+    private lateinit var outputStream: OutputStream
     private val args: QuizFragmentArgs by navArgs()
 
     override fun onCreateView(
@@ -57,6 +65,20 @@ class QuizFragment : Fragment() {
                 binding.textNumber.text =
                     getString(R.string.quiz_num, number.toString(), total.toString())
             })
+
+            when (args.quizCode) {
+                1 -> when (it + 1) {
+                    2 -> binding.imageQuestion.setImageResource(R.drawable.img_prism_1)
+                    3 -> binding.imageQuestion.setImageResource(R.drawable.img_prism_2)
+                }
+                2 -> when (it + 1) {
+                    1 -> binding.imageExplanation.setImageResource(R.drawable.img_pyramid_1)
+                    2 -> binding.imageExplanation.setImageResource(R.drawable.img_pyramid_2)
+                    3 -> binding.imageExplanation.setImageResource(R.drawable.img_pyramid_3)
+                    4 -> binding.imageQuestion.setImageResource(R.drawable.img_pyramid_4)
+                    5 -> binding.imageQuestion.setImageResource(R.drawable.img_pyramid_5)
+                }
+            }
         })
 
         viewModel.key.observe(viewLifecycleOwner, { key ->
@@ -156,19 +178,7 @@ class QuizFragment : Fragment() {
             if (it) completeQuest()
         })
 
-        when (args.quizCode) {
-            1 -> when (viewModel.currentNumber + 1) {
-                2 -> binding.imageQuestion.setImageResource(R.drawable.img_prism_1)
-                3 -> binding.imageQuestion.setImageResource(R.drawable.img_prism_2)
-            }
-            2 -> when (viewModel.currentNumber + 1) {
-                1 -> binding.imageExplanation.setImageResource(R.drawable.img_pyramid_1)
-                2 -> binding.imageExplanation.setImageResource(R.drawable.img_pyramid_2)
-                3 -> binding.imageExplanation.setImageResource(R.drawable.img_pyramid_3)
-                4 -> binding.imageQuestion.setImageResource(R.drawable.img_pyramid_4)
-                5 -> binding.imageQuestion.setImageResource(R.drawable.img_pyramid_5)
-            }
-        }
+
 
         binding.buttonNextQuestion.setOnClickListener {
             viewModel.nextQuestion()
@@ -197,13 +207,20 @@ class QuizFragment : Fragment() {
             false
         )
 
+        dialogQuizScoreBinding.textSectionName.text = section.sectionName
+
+        dialogQuizScoreBinding.textScoreTitle.text =
+            getString(R.string.dialog_score_title, getUsername())
+
         dialogQuizScoreBinding.textScore.text = section.score.toString()
 
         builder.setView(dialogQuizScoreBinding.root)
 
-        builder.setTitle(section.sectionName)
+        builder.setPositiveButton("bagikan") { _, _ ->
+            printToJpg()
+        }
 
-        builder.setPositiveButton("kembali ke beranda") { dialog, _ ->
+        builder.setNegativeButton("kembali ke beranda") { dialog, _ ->
             dialog.dismiss()
 //            findNavController().navigateUp()
             findNavController().navigate(R.id.action_quizFragment_to_homeFragment)
@@ -228,5 +245,35 @@ class QuizFragment : Fragment() {
         toolbar.setupWithNavController(findNavController(), appBarConfiguration)
         NavigationUI.setupWithNavController(toolbar, findNavController(), appBarConfiguration)
         toolbar.title = SectionData.listSection[code].sectionName
+    }
+
+    private fun getUsername(): String {
+        val sharedPreferences =
+            requireActivity().getSharedPreferences("username", Context.MODE_PRIVATE)
+        return sharedPreferences.getString("username", "")!!
+    }
+
+    private fun printToJpg() {
+        val bitmap = dialogQuizScoreBinding.layoutDialog.drawToBitmap()
+
+        val share = Intent(Intent.ACTION_SEND)
+        share.type = "image/jpeg"
+
+        val contentResolver = activity?.contentResolver
+        val values = ContentValues()
+        values.put(MediaStore.Images.Media.TITLE, "title")
+        values.put(MediaStore.Images.Media.MIME_TYPE, "image/jpeg")
+        val uri = contentResolver!!.insert(MediaStore.Images.Media.EXTERNAL_CONTENT_URI, values)
+
+        try {
+            outputStream = contentResolver.openOutputStream(uri!!)!!
+            bitmap.compress(Bitmap.CompressFormat.JPEG, 100, outputStream)
+            outputStream.close()
+        } catch (e: Exception) {
+            Log.e("ERROR", e.message, e.cause)
+        }
+
+        share.putExtra(Intent.EXTRA_STREAM, uri)
+        startActivity(Intent.createChooser(share, "Share Image"))
     }
 }

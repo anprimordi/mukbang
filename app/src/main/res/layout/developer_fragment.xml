@@ -125,6 +125,20 @@
                 android:text="Prof. Dr. Toto Nusantara, M.Si"
                 android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
                 app:drawableStartCompat="@drawable/ic_round_supervisor_account_24" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:layout_marginTop="24dp"
+                android:background="@android:color/darker_gray" />
+
+            <Button
+                android:id="@+id/button_reference"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="24dp"
+                android:text="lihat daftar pustaka" />
         </LinearLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

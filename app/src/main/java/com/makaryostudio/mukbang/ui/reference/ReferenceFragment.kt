@@ -1,32 +1,37 @@
 package com.makaryostudio.mukbang.ui.reference
 
-import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
+import androidx.navigation.ui.AppBarConfiguration
+import androidx.navigation.ui.NavigationUI
+import androidx.navigation.ui.setupWithNavController
+import com.google.android.material.appbar.MaterialToolbar
 import com.makaryostudio.mukbang.R
+import com.makaryostudio.mukbang.databinding.ReferenceFragmentBinding
 
 class ReferenceFragment : Fragment() {
 
-    companion object {
-        fun newInstance() = ReferenceFragment()
-    }
-
-    private lateinit var viewModel: ReferenceViewModel
+    private lateinit var binding: ReferenceFragmentBinding
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
-        return inflater.inflate(R.layout.reference_fragment, container, false)
+    ): View {
+        binding = ReferenceFragmentBinding.inflate(inflater)
+
+        setupToolbar(binding.toolbar)
+
+        return binding.root
     }
 
-    override fun onActivityCreated(savedInstanceState: Bundle?) {
-        super.onActivityCreated(savedInstanceState)
-        viewModel = ViewModelProvider(this).get(ReferenceViewModel::class.java)
-        // TODO: Use the ViewModel
+    private fun setupToolbar(toolbar: MaterialToolbar) {
+        val appBarConfiguration = AppBarConfiguration(findNavController().graph)
+        toolbar.setupWithNavController(findNavController(), appBarConfiguration)
+        NavigationUI.setupWithNavController(toolbar, findNavController(), appBarConfiguration)
+        toolbar.title = getString(R.string.ref_title)
     }
-
 }

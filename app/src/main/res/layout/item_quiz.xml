@@ -11,6 +11,7 @@
         android:id="@+id/card_item_quiz"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginVertical="4dp"
         android:layout_marginEnd="16dp"
         app:cardCornerRadius="8dp"
         app:cardPreventCornerOverlap="false">

@@ -23,7 +23,6 @@ class ScoreViewModel : ViewModel() {
     private val listSection = SectionData.listSection
 
     init {
-        // TODO: 30/03/2021 add score function 
         _cubeScore.value = listSection[0].score
         _prismScore.value = listSection[1].score
         _pyramidScore.value = listSection[2].score

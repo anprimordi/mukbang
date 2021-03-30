@@ -1,32 +1,32 @@
 package com.makaryostudio.mukbang.ui.developer
 
-import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import com.makaryostudio.mukbang.R
+import com.makaryostudio.mukbang.databinding.DeveloperFragmentBinding
 
 class DeveloperFragment : Fragment() {
 
-    companion object {
-        fun newInstance() = DeveloperFragment()
-    }
-
-    private lateinit var viewModel: DeveloperViewModel
+    private lateinit var binding: DeveloperFragmentBinding
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
-        return inflater.inflate(R.layout.developer_fragment, container, false)
+    ): View {
+        binding = DeveloperFragmentBinding.inflate(inflater)
+
+        return binding.root
     }
 
-    override fun onActivityCreated(savedInstanceState: Bundle?) {
-        super.onActivityCreated(savedInstanceState)
-        viewModel = ViewModelProvider(this).get(DeveloperViewModel::class.java)
-        // TODO: Use the ViewModel
-    }
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
 
+        binding.buttonReference.setOnClickListener {
+            findNavController().navigate(R.id.action_developerFragment_to_referenceFragment)
+        }
+    }
 }

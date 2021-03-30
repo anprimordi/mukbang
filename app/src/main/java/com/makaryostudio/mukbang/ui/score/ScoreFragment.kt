@@ -5,28 +5,26 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.ViewModelProvider
-import com.makaryostudio.mukbang.R
+import com.makaryostudio.mukbang.databinding.ScoreFragmentBinding
+import com.makaryostudio.mukbang.model.section.SectionData
 
 class ScoreFragment : Fragment() {
 
-    companion object {
-        fun newInstance() = ScoreFragment()
-    }
-
-    private lateinit var viewModel: ScoreViewModel
+    //    private val scoreCube: String
+//    private lateinit var scorePrism: String
+//    private lateinit var scorePyramid: String
+//    private lateinit var scoreFinal: String
+    private lateinit var binding: ScoreFragmentBinding
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
-        return inflater.inflate(R.layout.score_fragment, container, false)
+    ): View {
+        binding = ScoreFragmentBinding.inflate(inflater)
+
+        return binding.root
     }
 
-    override fun onActivityCreated(savedInstanceState: Bundle?) {
-        super.onActivityCreated(savedInstanceState)
-        viewModel = ViewModelProvider(this).get(ScoreViewModel::class.java)
-        // TODO: Use the ViewModel
-    }
+    private fun getScore(code: Int): String = SectionData.listSection[code].score.toString()
 
 }
