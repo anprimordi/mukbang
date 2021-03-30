@@ -44,7 +44,7 @@ class LoginFragment : Fragment() {
         }
 
         binding.textSkip.setOnClickListener {
-            if (!oldUser()) {
+            if (oldUser()) {
                 Snackbar.make(
                     binding.root,
                     "Kamu belum pernah login sebelumnya",

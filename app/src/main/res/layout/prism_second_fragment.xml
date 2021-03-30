@@ -25,24 +25,18 @@
 
         </com.google.android.material.appbar.AppBarLayout>
 
-        <androidx.core.widget.NestedScrollView
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior">
+            tools:context=".ui.materials.prism.PrismSecondFragment">
 
-            <androidx.constraintlayout.widget.ConstraintLayout
+            <com.github.barteksc.pdfviewer.PDFView
+                android:id="@+id/pdf_materials"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                tools:context=".ui.materials.prism.PrismSecondFragment">
+                android:layout_marginTop="?attr/actionBarSize" />
 
-                <com.github.barteksc.pdfviewer.PDFView
-                    android:id="@+id/pdf_materials"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent" />
-
-            </androidx.constraintlayout.widget.ConstraintLayout>
-
-        </androidx.core.widget.NestedScrollView>
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
 </layout>

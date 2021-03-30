@@ -28,13 +28,10 @@ class MainActivity : AppCompatActivity(), NavController.OnDestinationChangedList
         toolbar = findViewById(R.id.toolbar)
         appbar = findViewById(R.id.appbar)
 
-        appBarConfiguration = AppBarConfiguration(
-            navController.graph
-        )
+        appBarConfiguration = AppBarConfiguration(navController.graph)
 
         toolbar.setupWithNavController(navController, appBarConfiguration)
         NavigationUI.setupWithNavController(toolbar, navController, appBarConfiguration)
-
         navController.addOnDestinationChangedListener(this)
     }
 
@@ -51,12 +48,19 @@ class MainActivity : AppCompatActivity(), NavController.OnDestinationChangedList
         destination: NavDestination,
         arguments: Bundle?
     ) {
+        appbar.visibility = View.GONE
         when (destination.id) {
-            R.id.splashScreenFragment -> {
-                toolbar.visibility = View.GONE
+            R.id.materialsFragment,
+            R.id.quizFragment,
+            R.id.prismQuizFragment,
+            R.id.prismSecondFragment,
+            R.id.introFragment,
+            R.id.identityFragment,
+            R.id.finalQuizFragment -> {
+                toolbar.visibility = View.VISIBLE
             }
             else -> {
-                toolbar.visibility = View.VISIBLE
+                toolbar.visibility = View.GONE
             }
         }
     }

@@ -11,11 +11,16 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
+import androidx.navigation.ui.AppBarConfiguration
+import androidx.navigation.ui.NavigationUI
+import androidx.navigation.ui.setupWithNavController
+import com.google.android.material.appbar.MaterialToolbar
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.makaryostudio.mukbang.R
 import com.makaryostudio.mukbang.databinding.DialogQuizScoreBinding
 import com.makaryostudio.mukbang.databinding.QuizFragmentBinding
 import com.makaryostudio.mukbang.model.section.Section
+import com.makaryostudio.mukbang.model.section.SectionData
 import com.makaryostudio.mukbang.utils.QuizCodes
 
 class QuizFragment : Fragment() {
@@ -38,20 +43,16 @@ class QuizFragment : Fragment() {
         binding.viewModel = viewModel
         binding.lifecycleOwner = viewLifecycleOwner
 
+        setupToolbar(binding.toolbar, args.quizCode)
         return binding.root
-    }
-
-    override fun onActivityCreated(savedInstanceState: Bundle?) {
-        super.onActivityCreated(savedInstanceState)
-        viewModel = ViewModelProvider(this).get(QuizViewModel::class.java)
-        // TODO: Use the ViewModel
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         var choice: String
 
-        viewModel.number.observe(viewLifecycleOwner, { number ->
+        viewModel.number.observe(viewLifecycleOwner, {
+            val number = it + 1
             viewModel.totalQuest.observe(viewLifecycleOwner, { total ->
                 binding.textNumber.text =
                     getString(R.string.quiz_num, number.toString(), total.toString())
@@ -220,5 +221,12 @@ class QuizFragment : Fragment() {
             QuizCodes.FINAL -> this * 5
             else -> 0
         }
+    }
+
+    private fun setupToolbar(toolbar: MaterialToolbar, code: Int) {
+        val appBarConfiguration = AppBarConfiguration(findNavController().graph)
+        toolbar.setupWithNavController(findNavController(), appBarConfiguration)
+        NavigationUI.setupWithNavController(toolbar, findNavController(), appBarConfiguration)
+        toolbar.title = SectionData.listSection[code].sectionName
     }
 }

@@ -1,6 +1,7 @@
 package com.makaryostudio.mukbang.ui.materials
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -29,7 +30,7 @@ class MaterialsFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         binding = DataBindingUtil.inflate(inflater, R.layout.materials_fragment, container, false)
-
+        viewModelFactory = MaterialsViewModelFactory(args.materialsCode)
         viewModel = ViewModelProvider(this, viewModelFactory).get(MaterialsViewModel::class.java)
         binding.viewModel = viewModel
         binding.lifecycleOwner = viewLifecycleOwner
@@ -52,6 +53,7 @@ class MaterialsFragment : Fragment() {
         }
 
         viewModel.pdfSource.observe(viewLifecycleOwner) {
+            Log.e("pdfsource", it)
             binding.pdfMaterials.fromAsset(it)
                 .enableSwipe(true)
                 .enableDoubletap(true)
@@ -77,21 +79,14 @@ class MaterialsFragment : Fragment() {
         val appBarConfiguration = AppBarConfiguration(findNavController().graph)
         toolbar.setupWithNavController(findNavController(), appBarConfiguration)
         NavigationUI.setupWithNavController(toolbar, findNavController(), appBarConfiguration)
-        toolbar.inflateMenu(
-            when (code) {
-                1 -> R.id.menu_prism
-                else -> R.id.menu_complete
-            }
-        )
+
         toolbar.setOnMenuItemClickListener {
             when (it.itemId) {
                 R.id.menu_complete -> completeMaterials(code)
-                R.id.menu_prism -> completeMaterials(code)
                 else -> {
                     false
                 }
             }
         }
     }
-
 }

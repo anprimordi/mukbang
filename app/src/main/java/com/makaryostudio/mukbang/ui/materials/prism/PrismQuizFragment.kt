@@ -4,15 +4,21 @@ import android.annotation.SuppressLint
 import android.content.ClipData
 import android.content.ClipDescription
 import android.graphics.Color
+import android.os.Build
 import android.os.Bundle
 import android.util.Log
 import android.view.*
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.content.res.AppCompatResources.getDrawable
+import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
+import androidx.navigation.ui.AppBarConfiguration
+import androidx.navigation.ui.NavigationUI
+import androidx.navigation.ui.setupWithNavController
+import com.google.android.material.appbar.MaterialToolbar
 import com.makaryostudio.mukbang.R
 import com.makaryostudio.mukbang.databinding.PrismQuizFragmentBinding
 import com.makaryostudio.mukbang.utils.DragShadowBuilder
@@ -26,92 +32,41 @@ class PrismQuizFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-//        binding = DataBindingUtil.inflate(inflater, R.layout.prism_quiz_fragment, container, false)
-        binding = PrismQuizFragmentBinding.inflate(inflater)
+        binding = DataBindingUtil.inflate(inflater, R.layout.prism_quiz_fragment, container, false)
+//        binding = PrismQuizFragmentBinding.inflate(inflater)
         viewModel = ViewModelProvider(this).get(PrismQuizViewModel::class.java)
         binding.viewModel = viewModel
         binding.lifecycleOwner = viewLifecycleOwner
 
+        setupToolbar(binding.toolbar)
         return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        onDragAndDrop(binding.textAnswerOne, binding.textAnswerOne)
-        onDragAndDrop(binding.textAnswerTwo, binding.textAnswerOne)
-        onDragAndDrop(binding.textAnswerThree, binding.textAnswerOne)
-        onDragAndDrop(binding.textAnswerFour, binding.textAnswerOne)
+        viewModel.question.observe(viewLifecycleOwner, {
+            onDragAndDrop(binding.textAnswerOne, binding.textQuestionOne)
+            onDragAndDrop(binding.textAnswerTwo, binding.textQuestionOne)
+            onDragAndDrop(binding.textAnswerThree, binding.textQuestionOne)
+            onDragAndDrop(binding.textAnswerFour, binding.textQuestionOne)
 
-        onDragAndDrop(binding.textAnswerOne, binding.textAnswerTwo)
-        onDragAndDrop(binding.textAnswerTwo, binding.textAnswerTwo)
-        onDragAndDrop(binding.textAnswerThree, binding.textAnswerTwo)
-        onDragAndDrop(binding.textAnswerFour, binding.textAnswerTwo)
+            onDragAndDrop(binding.textAnswerOne, binding.textQuestionTwo)
+            onDragAndDrop(binding.textAnswerTwo, binding.textQuestionTwo)
+            onDragAndDrop(binding.textAnswerThree, binding.textQuestionTwo)
+            onDragAndDrop(binding.textAnswerFour, binding.textQuestionTwo)
 
-        onDragAndDrop(binding.textAnswerOne, binding.textAnswerThree)
-        onDragAndDrop(binding.textAnswerTwo, binding.textAnswerThree)
-        onDragAndDrop(binding.textAnswerThree, binding.textAnswerThree)
-        onDragAndDrop(binding.textAnswerFour, binding.textAnswerThree)
+            onDragAndDrop(binding.textAnswerOne, binding.textQuestionThree)
+            onDragAndDrop(binding.textAnswerTwo, binding.textQuestionThree)
+            onDragAndDrop(binding.textAnswerThree, binding.textQuestionThree)
+            onDragAndDrop(binding.textAnswerFour, binding.textQuestionThree)
 
-        onDragAndDrop(binding.textAnswerOne, binding.textAnswerFour)
-        onDragAndDrop(binding.textAnswerTwo, binding.textAnswerFour)
-        onDragAndDrop(binding.textAnswerThree, binding.textAnswerFour)
-        onDragAndDrop(binding.textAnswerFour, binding.textAnswerFour)
+            onDragAndDrop(binding.textAnswerOne, binding.textQuestionFour)
+            onDragAndDrop(binding.textAnswerTwo, binding.textQuestionFour)
+            onDragAndDrop(binding.textAnswerThree, binding.textQuestionFour)
+            onDragAndDrop(binding.textAnswerFour, binding.textQuestionFour)
+        })
 
-        binding.buttonNext.setOnClickListener {
-
-            viewModel.questionOne.observe(viewLifecycleOwner, {
-                if (it == "") {
-                    binding.textQuestionOne.apply {
-                        error = getString(R.string.error_must_be_answered)
-                        requestFocus()
-                    }
-                }
-            })
-            viewModel.questionTwo.observe(viewLifecycleOwner, {
-                if (it == "") {
-                    binding.textQuestionTwo.apply {
-                        error = getString(R.string.error_must_be_answered)
-                        requestFocus()
-                    }
-                }
-            })
-            viewModel.questionThree.observe(viewLifecycleOwner, {
-                if (it == "") {
-                    binding.textQuestionThree.apply {
-                        error = getString(R.string.error_must_be_answered)
-                        requestFocus()
-                    }
-                }
-            })
-            viewModel.questionFour.observe(viewLifecycleOwner, {
-                if (it == "") {
-                    binding.textQuestionFour.apply {
-                        error = getString(R.string.error_must_be_answered)
-                        requestFocus()
-                    }
-                }
-            })
-
-            val answerA = binding.textQuestionOne.text.toString()
-            val answerB = binding.textQuestionTwo.text.toString()
-            val answerC = binding.textQuestionThree.text.toString()
-            val answerD = binding.textQuestionFour.text.toString()
-
-            checkKey(answerA, answerB, answerC, answerD)
-
-            viewModel.score.observe(viewLifecycleOwner, {
-                Log.e("TEST", "PRISM QUIZ SCORE: $it")
-                when (it) {
-                    4 -> findNavController().navigate(R.id.action_prismQuizFragment_to_prismSecondFragment)
-                    else -> Toast.makeText(
-                        requireContext(),
-                        getString(R.string.error_incorrect_answer),
-                        Toast.LENGTH_SHORT
-                    ).show()
-                }
-            })
-        }
     }
 
     private fun checkKey(
@@ -163,7 +118,11 @@ class PrismQuizFragment : Fragment() {
 
             val myShadow = DragShadowBuilder(view)
 
-            view.startDragAndDrop(dragData, myShadow, null, 0)
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
+                view.startDragAndDrop(dragData, myShadow, null, 0)
+            } else {
+                view.startDrag(dragData, myShadow, null, 0)
+            }
 
 //            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
 //                view.startDragAndDrop(dragData, myShadow, null, 0)
@@ -186,7 +145,7 @@ class PrismQuizFragment : Fragment() {
             DragEvent.ACTION_DRAG_STARTED -> {
                 if (event.clipDescription.hasMimeType(ClipDescription.MIMETYPE_TEXT_PLAIN)) {
                     receiverView.setBackgroundColor(Color.CYAN)
-                    receiverView.text = viewModel.questionOneDrop.value
+                    receiverView.text = viewModel.keyOneDrop.value
                     view.invalidate()
                     true
                 } else {
@@ -196,7 +155,7 @@ class PrismQuizFragment : Fragment() {
 
             DragEvent.ACTION_DRAG_ENTERED -> {
                 receiverView.setBackgroundColor(Color.GREEN)
-                receiverView.text = viewModel.questionOneDrop.value
+                receiverView.text = viewModel.keyOneDrop.value
                 view.invalidate()
                 true
             }
@@ -206,7 +165,7 @@ class PrismQuizFragment : Fragment() {
 
             DragEvent.ACTION_DRAG_EXITED -> {
                 receiverView.setBackgroundColor(Color.YELLOW)
-                receiverView.text = viewModel.questionOneDrop.value
+                receiverView.text = viewModel.keyOneDrop.value
                 view.invalidate()
                 true
             }
@@ -215,7 +174,7 @@ class PrismQuizFragment : Fragment() {
                 val item: ClipData.Item = event.clipData.getItemAt(0)
                 val dragData = item.text
                 receiverView.text = "$dragData"
-                viewModel.questionOneDrop.value = receiverView.text.toString()
+                viewModel.keyOneDrop.value = receiverView.text.toString()
                 view.invalidate()
                 true
             }
@@ -233,7 +192,7 @@ class PrismQuizFragment : Fragment() {
                     }
                     else -> {
                         // drop didn't work
-                        receiverView.text = viewModel.answerOne.value
+                        receiverView.text = viewModel.keyOneDrop.value
                         receiverView.setBackgroundColor(Color.RED)
                     }
                 }
@@ -254,7 +213,7 @@ class PrismQuizFragment : Fragment() {
             DragEvent.ACTION_DRAG_STARTED -> {
                 if (event.clipDescription.hasMimeType(ClipDescription.MIMETYPE_TEXT_PLAIN)) {
                     receiverView.setBackgroundColor(Color.CYAN)
-                    receiverView.text = viewModel.questionTwoDrop.value
+                    receiverView.text = viewModel.keyTwoDrop.value
                     view.invalidate()
                     true
                 } else {
@@ -264,7 +223,7 @@ class PrismQuizFragment : Fragment() {
 
             DragEvent.ACTION_DRAG_ENTERED -> {
                 receiverView.setBackgroundColor(Color.GREEN)
-                receiverView.text = viewModel.questionTwoDrop.value
+                receiverView.text = viewModel.keyTwoDrop.value
                 view.invalidate()
                 true
             }
@@ -274,7 +233,7 @@ class PrismQuizFragment : Fragment() {
 
             DragEvent.ACTION_DRAG_EXITED -> {
                 receiverView.setBackgroundColor(Color.YELLOW)
-                receiverView.text = viewModel.questionTwoDrop.value
+                receiverView.text = viewModel.keyTwoDrop.value
                 view.invalidate()
                 true
             }
@@ -283,7 +242,7 @@ class PrismQuizFragment : Fragment() {
                 val item: ClipData.Item = event.clipData.getItemAt(0)
                 val dragData = item.text
                 receiverView.text = "$dragData"
-                viewModel.questionTwoDrop.value = receiverView.text.toString()
+                viewModel.keyTwoDrop.value = receiverView.text.toString()
                 view.invalidate()
                 true
             }
@@ -301,7 +260,7 @@ class PrismQuizFragment : Fragment() {
                     }
                     else -> {
                         // drop didn't work
-                        receiverView.text = viewModel.questionTwoDrop.value
+                        receiverView.text = viewModel.keyTwoDrop.value
                         receiverView.setBackgroundColor(Color.RED)
                     }
                 }
@@ -322,7 +281,7 @@ class PrismQuizFragment : Fragment() {
             DragEvent.ACTION_DRAG_STARTED -> {
                 if (event.clipDescription.hasMimeType(ClipDescription.MIMETYPE_TEXT_PLAIN)) {
                     receiverView.setBackgroundColor(Color.CYAN)
-                    receiverView.text = viewModel.questionThreeDrop.value
+                    receiverView.text = viewModel.keyThreeDrop.value
                     view.invalidate()
                     true
                 } else {
@@ -332,7 +291,7 @@ class PrismQuizFragment : Fragment() {
 
             DragEvent.ACTION_DRAG_ENTERED -> {
                 receiverView.setBackgroundColor(Color.GREEN)
-                receiverView.text = viewModel.questionThreeDrop.value
+                receiverView.text = viewModel.keyThreeDrop.value
                 view.invalidate()
                 true
             }
@@ -342,7 +301,7 @@ class PrismQuizFragment : Fragment() {
 
             DragEvent.ACTION_DRAG_EXITED -> {
                 receiverView.setBackgroundColor(Color.YELLOW)
-                receiverView.text = viewModel.questionThreeDrop.value
+                receiverView.text = viewModel.keyThreeDrop.value
                 view.invalidate()
                 true
             }
@@ -351,7 +310,7 @@ class PrismQuizFragment : Fragment() {
                 val item: ClipData.Item = event.clipData.getItemAt(0)
                 val dragData = item.text
                 receiverView.text = "$dragData"
-                viewModel.questionThreeDrop.value = receiverView.text.toString()
+                viewModel.keyThreeDrop.value = receiverView.text.toString()
                 view.invalidate()
                 true
             }
@@ -369,7 +328,7 @@ class PrismQuizFragment : Fragment() {
                     }
                     else -> {
                         // drop didn't work
-                        receiverView.text = viewModel.questionThreeDrop.value
+                        receiverView.text = viewModel.keyThreeDrop.value
                         receiverView.setBackgroundColor(Color.RED)
                     }
                 }
@@ -390,7 +349,7 @@ class PrismQuizFragment : Fragment() {
             DragEvent.ACTION_DRAG_STARTED -> {
                 if (event.clipDescription.hasMimeType(ClipDescription.MIMETYPE_TEXT_PLAIN)) {
                     receiverView.setBackgroundColor(Color.CYAN)
-                    receiverView.text = viewModel.questionFourDrop.value
+                    receiverView.text = viewModel.keyFourDrop.value
                     view.invalidate()
                     true
                 } else {
@@ -400,7 +359,7 @@ class PrismQuizFragment : Fragment() {
 
             DragEvent.ACTION_DRAG_ENTERED -> {
                 receiverView.setBackgroundColor(Color.GREEN)
-                receiverView.text = viewModel.questionFourDrop.value
+                receiverView.text = viewModel.keyFourDrop.value
                 view.invalidate()
                 true
             }
@@ -410,7 +369,7 @@ class PrismQuizFragment : Fragment() {
 
             DragEvent.ACTION_DRAG_EXITED -> {
                 receiverView.setBackgroundColor(Color.YELLOW)
-                receiverView.text = viewModel.questionFourDrop.value
+                receiverView.text = viewModel.keyFourDrop.value
                 view.invalidate()
                 true
             }
@@ -419,7 +378,7 @@ class PrismQuizFragment : Fragment() {
                 val item: ClipData.Item = event.clipData.getItemAt(0)
                 val dragData = item.text
                 receiverView.text = "$dragData"
-                viewModel.questionFourDrop.value = receiverView.text.toString()
+                viewModel.keyFourDrop.value = receiverView.text.toString()
                 view.invalidate()
                 true
             }
@@ -438,7 +397,7 @@ class PrismQuizFragment : Fragment() {
 
                     else -> {
                         // drop didn't work
-                        receiverView.text = viewModel.questionFourDrop.value
+                        receiverView.text = viewModel.keyFourDrop.value
                         receiverView.setBackgroundColor(Color.RED)
                     }
                 }
@@ -450,6 +409,74 @@ class PrismQuizFragment : Fragment() {
             else -> {
                 // An unknown action type was received.
                 false
+            }
+        }
+    }
+
+    private fun setupToolbar(toolbar: MaterialToolbar) {
+        val appBarConfiguration = AppBarConfiguration(findNavController().graph)
+        toolbar.setupWithNavController(findNavController(), appBarConfiguration)
+        NavigationUI.setupWithNavController(toolbar, findNavController(), appBarConfiguration)
+
+        toolbar.setOnMenuItemClickListener {
+            when (it.itemId) {
+                R.id.menu_complete -> {
+                    viewModel.keyOne.observe(viewLifecycleOwner, {
+                        if (it == "") {
+                            binding.textQuestionOne.apply {
+                                error = getString(R.string.error_must_be_answered)
+                                requestFocus()
+                            }
+                        }
+                    })
+                    viewModel.keyTwo.observe(viewLifecycleOwner, {
+                        if (it == "") {
+                            binding.textQuestionTwo.apply {
+                                error = getString(R.string.error_must_be_answered)
+                                requestFocus()
+                            }
+                        }
+                    })
+                    viewModel.keyThree.observe(viewLifecycleOwner, {
+                        if (it == "") {
+                            binding.textQuestionThree.apply {
+                                error = getString(R.string.error_must_be_answered)
+                                requestFocus()
+                            }
+                        }
+                    })
+                    viewModel.keyFour.observe(viewLifecycleOwner, {
+                        if (it == "") {
+                            binding.textQuestionFour.apply {
+                                error = getString(R.string.error_must_be_answered)
+                                requestFocus()
+                            }
+                        }
+                    })
+
+                    val answerA = binding.textQuestionOne.text.toString()
+                    val answerB = binding.textQuestionTwo.text.toString()
+                    val answerC = binding.textQuestionThree.text.toString()
+                    val answerD = binding.textQuestionFour.text.toString()
+
+                    checkKey(answerA, answerB, answerC, answerD)
+
+                    viewModel.score.observe(viewLifecycleOwner, { score ->
+                        Log.e("TEST", "PRISM QUIZ SCORE: $score")
+                        when (score) {
+                            4 -> findNavController().navigate(R.id.action_prismQuizFragment_to_prismSecondFragment)
+                            else -> Toast.makeText(
+                                requireContext(),
+                                getString(R.string.error_incorrect_answer),
+                                Toast.LENGTH_SHORT
+                            ).show()
+                        }
+                    })
+                    true
+                }
+                else -> {
+                    false
+                }
             }
         }
     }

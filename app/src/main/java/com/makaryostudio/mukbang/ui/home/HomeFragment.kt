@@ -34,7 +34,10 @@ class HomeFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val horizontalLayoutManager =
+        val materialHorizontalLayoutManager =
+            LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
+
+        val quizHorizontalLayoutManager =
             LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
 
         materialsClickListener = object : MaterialsClickListener {
@@ -47,9 +50,14 @@ class HomeFragment : Fragment() {
 
         quizClickListener = object : QuizClickListener {
             override fun clickListener(code: Int) {
-                findNavController().navigate(
-                    HomeFragmentDirections.actionHomeFragmentToQuizFragment(code)
-                )
+                when (code) {
+                    3 -> findNavController().navigate(
+                        HomeFragmentDirections.actionHomeFragmentToFinalQuizFragment(code)
+                    )
+                    else -> findNavController().navigate(
+                        HomeFragmentDirections.actionHomeFragmentToQuizFragment(code)
+                    )
+                }
             }
         }
 
@@ -57,7 +65,7 @@ class HomeFragment : Fragment() {
         materialsAdapter = MaterialsAdapter(requireContext(), materialsList, materialsClickListener)
 
         binding.rvMaterials.apply {
-            layoutManager = horizontalLayoutManager
+            layoutManager = materialHorizontalLayoutManager
             adapter = materialsAdapter
         }
 
@@ -65,7 +73,7 @@ class HomeFragment : Fragment() {
         quizAdapter = QuizAdapter(requireContext(), quizList, quizClickListener)
 
         binding.rvQuiz.apply {
-            layoutManager = horizontalLayoutManager
+            layoutManager = quizHorizontalLayoutManager
             adapter = quizAdapter
         }
 
@@ -73,5 +81,16 @@ class HomeFragment : Fragment() {
             findNavController().navigate(R.id.action_homeFragment_to_identityFragment)
         }
 
+        binding.imageIntro.setOnClickListener {
+            findNavController().navigate(R.id.action_homeFragment_to_introFragment)
+        }
+
+        binding.imageClue.setOnClickListener {
+            findNavController().navigate(R.id.action_homeFragment_to_manualFragment)
+        }
+
+        binding.imageConcept.setOnClickListener {
+            findNavController().navigate(R.id.action_homeFragment_to_conceptMapFragment)
+        }
     }
 }

@@ -81,7 +81,7 @@ class FinalQuizViewModel(code: Int) : ViewModel() {
     fun nextQuestion() {
         if (currentNumber + 1 < totalQuestion.value!!) {
             _number.value = _number.value!!.plus(1)
-            showQuestion(listQuestionQuest[currentNumber++])
+            showQuestion(listQuestionQuest[++currentNumber])
         } else {
             onQuest()
         }

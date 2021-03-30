@@ -21,430 +21,431 @@
     <string name="dialog_score_title">Skor kamu adalah:</string>
     <string name="error_must_be_answered">Harus dijawab ya!</string>
     <string name="error_incorrect_answer">Ada yang masih salah nih!</string>
+    <string name="introduction_title">Pendahuluan</string>
 
-    <string-array name="list_cube_quest">
-        <item>Rama akan membuat 3 buah kerangka balok yang berukuran 6 cm x 6 cm x 3 cm terbuat dari kawat. Jika kawat yang tersedia 2 m, panjang sisa kawat adalah …</item>
-        <item>Sebuah kubus memiliki volume 343 cm<sup>3</sup>. Jika panjang rusuk kubus tersebut diperbesar menjadi 4 kali panjang rusuk semula. Maka volume kubus yang baru adalah … cm<sup>3</sup></item>
-        <item>Sebuah balok mempunyai luas permukaan 376 cm<sup>2</sup>. Jika panjang balok 10 cm dan lebar balok 6 cm. Tinggi dari balok tersebut adalah … cm</item>
-        <item>Volume sebuah kubus sama dengan volume balok yaitu 1.000 cm<sup>3</sup>. Diketahui panjang balok dua kali panjang kubus dan tinggi balok setengah kali lebar balok. Luas permukaan balok adalah … cm<sup>2</sup></item>
+    <!--    <string-array name="list_cube_quest">-->
+    <!--        <item>Rama akan membuat 3 buah kerangka balok yang berukuran 6 cm x 6 cm x 3 cm terbuat dari kawat. Jika kawat yang tersedia 2 m, panjang sisa kawat adalah …</item>-->
+    <!--        <item>Sebuah kubus memiliki volume 343 cm<sup>3</sup>. Jika panjang rusuk kubus tersebut diperbesar menjadi 4 kali panjang rusuk semula. Maka volume kubus yang baru adalah … cm<sup>3</sup></item>-->
+    <!--        <item>Sebuah balok mempunyai luas permukaan 376 cm<sup>2</sup>. Jika panjang balok 10 cm dan lebar balok 6 cm. Tinggi dari balok tersebut adalah … cm</item>-->
+    <!--        <item>Volume sebuah kubus sama dengan volume balok yaitu 1.000 cm<sup>3</sup>. Diketahui panjang balok dua kali panjang kubus dan tinggi balok setengah kali lebar balok. Luas permukaan balok adalah … cm<sup>2</sup></item>-->
 
-        <item>Suatu balok memiliki luas permukaan 198 cm<sup>2</sup>. Jika lebar dan tinggi balok masing-masing 6 cm dan 3 cm, tentukan panjang balok tersebut!</item>
-        <item>Dua buah kubus masing-masing panjang rusuknya 6 cm dan 10 cm. Hitunglah perbandingan luas permukaan dua kubus tersebut adalah …</item>
-        <item>Made akan membuat 15 buah kerangka balok yang masing-masing berukuran 30 cm x 20 cm x 15 cm. Jumlah panjang kawat yang diperlukan untuk membuat balok tersebut adalah … meter</item>
-        <item>Made akan membuat 15 buah kerangka balok yang masing-masing berukuran 30 cm x 20 cm x 15 cm. Bahan yang akan digunakan terbuat dari kawat yang harganya Rp 1.500/m. Biaya yang diperlukan untuk membeli bahan/kawat adalah …</item>
-        <item>Panjang kawat yang diperlukan untuk membuat kotak kapur tulis berukuran (6 x 4 x 5) cm adalah …</item>
-    </string-array>
+    <!--        <item>Suatu balok memiliki luas permukaan 198 cm<sup>2</sup>. Jika lebar dan tinggi balok masing-masing 6 cm dan 3 cm, tentukan panjang balok tersebut!</item>-->
+    <!--        <item>Dua buah kubus masing-masing panjang rusuknya 6 cm dan 10 cm. Hitunglah perbandingan luas permukaan dua kubus tersebut adalah …</item>-->
+    <!--        <item>Made akan membuat 15 buah kerangka balok yang masing-masing berukuran 30 cm x 20 cm x 15 cm. Jumlah panjang kawat yang diperlukan untuk membuat balok tersebut adalah … meter</item>-->
+    <!--        <item>Made akan membuat 15 buah kerangka balok yang masing-masing berukuran 30 cm x 20 cm x 15 cm. Bahan yang akan digunakan terbuat dari kawat yang harganya Rp 1.500/m. Biaya yang diperlukan untuk membeli bahan/kawat adalah …</item>-->
+    <!--        <item>Panjang kawat yang diperlukan untuk membuat kotak kapur tulis berukuran (6 x 4 x 5) cm adalah …</item>-->
+    <!--    </string-array>-->
 
-    <string-array name="list_cube_option_a">
-        <item>20 cm</item>
-        <item>64</item>
-        <item>6</item>
-        <item>700</item>
-        <item>6</item>
+    <!--    <string-array name="list_cube_option_a">-->
+    <!--        <item>20 cm</item>-->
+    <!--        <item>64</item>-->
+    <!--        <item>6</item>-->
+    <!--        <item>700</item>-->
+    <!--        <item>6</item>-->
 
-        <item>3 : 5</item>
-        <item>24</item>
-        <item>Rp38.500,00</item>
-        <item>40 cm</item>
-        <item>6</item>
-    </string-array>
+    <!--        <item>3 : 5</item>-->
+    <!--        <item>24</item>-->
+    <!--        <item>Rp38.500,00</item>-->
+    <!--        <item>40 cm</item>-->
+    <!--        <item>6</item>-->
+    <!--    </string-array>-->
 
-    <string-array name="list_cube_option_b">
-        <item>24 cm</item>
-        <item>343</item>
-        <item>8</item>
-        <item>900</item>
-        <item>7</item>
+    <!--    <string-array name="list_cube_option_b">-->
+    <!--        <item>24 cm</item>-->
+    <!--        <item>343</item>-->
+    <!--        <item>8</item>-->
+    <!--        <item>900</item>-->
+    <!--        <item>7</item>-->
 
-        <item>3 : 10</item>
-        <item>39</item>
-        <item>Rp48.500,00</item>
-        <item>60 cm</item>
-        <item>10</item>
-    </string-array>
+    <!--        <item>3 : 10</item>-->
+    <!--        <item>39</item>-->
+    <!--        <item>Rp48.500,00</item>-->
+    <!--        <item>60 cm</item>-->
+    <!--        <item>10</item>-->
+    <!--    </string-array>-->
 
-    <string-array name="list_cube_option_c">
-        <item>30 cm</item>
-        <item>3.646</item>
-        <item>10</item>
-        <item>1.100</item>
-        <item>8</item>
+    <!--    <string-array name="list_cube_option_c">-->
+    <!--        <item>30 cm</item>-->
+    <!--        <item>3.646</item>-->
+    <!--        <item>10</item>-->
+    <!--        <item>1.100</item>-->
+    <!--        <item>8</item>-->
 
-        <item>9 : 15</item>
-        <item>46</item>
-        <item>Rp58.500,00</item>
-        <item>80 cm</item>
-        <item>13</item>
-    </string-array>
+    <!--        <item>9 : 15</item>-->
+    <!--        <item>46</item>-->
+    <!--        <item>Rp58.500,00</item>-->
+    <!--        <item>80 cm</item>-->
+    <!--        <item>13</item>-->
+    <!--    </string-array>-->
 
-    <string-array name="list_cube_option_d">
-        <item>32 cm</item>
-        <item>21.952</item>
-        <item>12</item>
-        <item>1.300</item>
-        <item>9</item>
+    <!--    <string-array name="list_cube_option_d">-->
+    <!--        <item>32 cm</item>-->
+    <!--        <item>21.952</item>-->
+    <!--        <item>12</item>-->
+    <!--        <item>1.300</item>-->
+    <!--        <item>9</item>-->
 
-        <item>9 : 25</item>
-        <item>49</item>
-        <item>Rp 68.500,00</item>
-        <item>100 cm</item>
-        <item>18</item>
-    </string-array>
+    <!--        <item>9 : 25</item>-->
+    <!--        <item>49</item>-->
+    <!--        <item>Rp 68.500,00</item>-->
+    <!--        <item>100 cm</item>-->
+    <!--        <item>18</item>-->
+    <!--    </string-array>-->
 
-    <string-array name="list_cube_key">
-        <item>A</item>
-        <item>D</item>
-        <item>C</item>
-        <item>A</item>
-        <item>D</item>
+    <!--    <string-array name="list_cube_key">-->
+    <!--        <item>A</item>-->
+    <!--        <item>D</item>-->
+    <!--        <item>C</item>-->
+    <!--        <item>A</item>-->
+    <!--        <item>D</item>-->
 
-        <item>D</item>
-        <item>B</item>
-        <item>C</item>
-        <item>B</item>
-        <item>C</item>
-    </string-array>
+    <!--        <item>D</item>-->
+    <!--        <item>B</item>-->
+    <!--        <item>C</item>-->
+    <!--        <item>B</item>-->
+    <!--        <item>C</item>-->
+    <!--    </string-array>-->
 
-    <string-array name="list_cube_explanation">
-        <item>
-            Kerangka balok disusun oleh 4 rusuk panjang, 4 rusuk lebar, dan 4 rusuk tinggi. Sehingga, panjang kawat untuk membuat 1 (satu) kerangka balok adalah sebagai berikut\n
-                = 4p + 4l + 4t\n
-                = 4(6) + 4(6) + 4(3)\n
-                =  60 cm\n
-                Panjang kawat untuk membuat 3 (tiga) kerangka balok adalah\n
-                = 60 x 3\n
-                = 180 cm\n
-                Mencari sisa panjang kawat\n
-                 = 2m – 180 cm\n
-                = 200 cm – 180 cm\n
-                = 20 cm\n
-        </item>
-        <item>
-            Kita harus mencari panjang rusuk awal (s<sub>0</sub>), yakni:\n
-                V<sub>0</sub> = s<sup>3</sup>\n
-                343 cm<sup>3</sup> = s<sup>3</sup>\n
-                (7 cm)<sup>3</sup> = s<sup>3</sup>\n
-                s<sub>0</sub> = 7 cm\n
-                Sekarang kita hitung panjang jika rusuk tersebut diperbesar 4 kali dari panjang semula, maka\n
-                s<sub>1</sub> = 4s<sub>0</sub>\n
-                s<sub>1</sub> = 4.7 cm\n
-                s<sub>1</sub> = 28 cm\n
-                Sekarang kita hitung volume kubus setelah rusuknya diperbesar 4 kali yakni:\n
-                V<sub>1</sub> = s<sup>3</sup>\n
-                V<sub>1</sub> = (28 cm)<sup>3</sup>\n
-                V<sub>1</sub> = 21.952 cm<sup>3</sup>\n
-                Jadi volume kubus setelah diperbesar 4 kali adalah 21.952 cm<sup>3</sup>
-        </item>
-        <item>
-            Untuk mencari tinggi balok tersebut gunakan rumus luas permukaan balok yaitu:\n
-            L  = 2(p.l + p.t + l.t)\n
-            376 cm<sup>2</sup> = 2(10 cm.6 cm + 10 cm.t + 6 cm.t)\n
-            376 cm<sup>2</sup> = 2 (60 cm<sup>2</sup> +10 cm.t +6 cm.t)\n
-            376 cm<sup>2</sup> = 2(60 cm<sup>2</sup> + 16 cm.t)\n
-            376 cm<sup>2</sup> = 120 cm<sup>2</sup> + 32 cm.t\n
-            376 cm<sup>2</sup> – 120 cm<sup>2</sup> = 32 cm.t\n
-            256 cm<sup>2</sup> = 32 cm.t\n
-            t = 256 cm<sup>2</sup>/32 cm\n
-            t = 8 cm\n
+    <!--    <string-array name="list_cube_explanation">-->
+    <!--        <item>-->
+    <!--            Kerangka balok disusun oleh 4 rusuk panjang, 4 rusuk lebar, dan 4 rusuk tinggi. Sehingga, panjang kawat untuk membuat 1 (satu) kerangka balok adalah sebagai berikut\n-->
+    <!--                = 4p + 4l + 4t\n-->
+    <!--                = 4(6) + 4(6) + 4(3)\n-->
+    <!--                =  60 cm\n-->
+    <!--                Panjang kawat untuk membuat 3 (tiga) kerangka balok adalah\n-->
+    <!--                = 60 x 3\n-->
+    <!--                = 180 cm\n-->
+    <!--                Mencari sisa panjang kawat\n-->
+    <!--                 = 2m – 180 cm\n-->
+    <!--                = 200 cm – 180 cm\n-->
+    <!--                = 20 cm\n-->
+    <!--        </item>-->
+    <!--        <item>-->
+    <!--            Kita harus mencari panjang rusuk awal (s<sub>0</sub>), yakni:\n-->
+    <!--                V<sub>0</sub> = s<sup>3</sup>\n-->
+    <!--                343 cm<sup>3</sup> = s<sup>3</sup>\n-->
+    <!--                (7 cm)<sup>3</sup> = s<sup>3</sup>\n-->
+    <!--                s<sub>0</sub> = 7 cm\n-->
+    <!--                Sekarang kita hitung panjang jika rusuk tersebut diperbesar 4 kali dari panjang semula, maka\n-->
+    <!--                s<sub>1</sub> = 4s<sub>0</sub>\n-->
+    <!--                s<sub>1</sub> = 4.7 cm\n-->
+    <!--                s<sub>1</sub> = 28 cm\n-->
+    <!--                Sekarang kita hitung volume kubus setelah rusuknya diperbesar 4 kali yakni:\n-->
+    <!--                V<sub>1</sub> = s<sup>3</sup>\n-->
+    <!--                V<sub>1</sub> = (28 cm)<sup>3</sup>\n-->
+    <!--                V<sub>1</sub> = 21.952 cm<sup>3</sup>\n-->
+    <!--                Jadi volume kubus setelah diperbesar 4 kali adalah 21.952 cm<sup>3</sup>-->
+    <!--        </item>-->
+    <!--        <item>-->
+    <!--            Untuk mencari tinggi balok tersebut gunakan rumus luas permukaan balok yaitu:\n-->
+    <!--            L  = 2(p.l + p.t + l.t)\n-->
+    <!--            376 cm<sup>2</sup> = 2(10 cm.6 cm + 10 cm.t + 6 cm.t)\n-->
+    <!--            376 cm<sup>2</sup> = 2 (60 cm<sup>2</sup> +10 cm.t +6 cm.t)\n-->
+    <!--            376 cm<sup>2</sup> = 2(60 cm<sup>2</sup> + 16 cm.t)\n-->
+    <!--            376 cm<sup>2</sup> = 120 cm<sup>2</sup> + 32 cm.t\n-->
+    <!--            376 cm<sup>2</sup> – 120 cm<sup>2</sup> = 32 cm.t\n-->
+    <!--            256 cm<sup>2</sup> = 32 cm.t\n-->
+    <!--            t = 256 cm<sup>2</sup>/32 cm\n-->
+    <!--            t = 8 cm\n-->
 
-            Jadi tinggi balok tersebut adalah 8 cm.
-        </item>
-        <item></item>
-        <item></item>
+    <!--            Jadi tinggi balok tersebut adalah 8 cm.-->
+    <!--        </item>-->
+    <!--        <item></item>-->
+    <!--        <item></item>-->
 
-        <sup></sup>
-        <sub></sub>
+    <!--        <sup></sup>-->
+    <!--        <sub></sub>-->
 
-        <item></item>
-        <item></item>
-        <item></item>
-        <item></item>
-        <item></item>
-    </string-array>
+    <!--        <item></item>-->
+    <!--        <item></item>-->
+    <!--        <item></item>-->
+    <!--        <item></item>-->
+    <!--        <item></item>-->
+    <!--    </string-array>-->
 
-    <string-array name="list_prism_quest">
-        <item></item>
-        <item></item>
-        <item></item>
-        <item></item>
+    <!--    <string-array name="list_prism_quest">-->
+    <!--        <item></item>-->
+    <!--        <item></item>-->
+    <!--        <item></item>-->
+    <!--        <item></item>-->
 
-        <item></item>
-        <item></item>
-        <item></item>
-        <item></item>
-        <item></item>
-    </string-array>
+    <!--        <item></item>-->
+    <!--        <item></item>-->
+    <!--        <item></item>-->
+    <!--        <item></item>-->
+    <!--        <item></item>-->
+    <!--    </string-array>-->
 
-    <string-array name="list_prism_option_a">
-        <item></item>
-        <item></item>
-        <item></item>
-        <item></item>
+    <!--    <string-array name="list_prism_option_a">-->
+    <!--        <item></item>-->
+    <!--        <item></item>-->
+    <!--        <item></item>-->
+    <!--        <item></item>-->
 
-        <item></item>
-        <item></item>
-        <item></item>
-        <item></item>
-        <item></item>
-    </string-array>
+    <!--        <item></item>-->
+    <!--        <item></item>-->
+    <!--        <item></item>-->
+    <!--        <item></item>-->
+    <!--        <item></item>-->
+    <!--    </string-array>-->
 
-    <string-array name="list_prism_option_b">
-        <item></item>
-        <item></item>
-        <item></item>
-        <item></item>
+    <!--    <string-array name="list_prism_option_b">-->
+    <!--        <item></item>-->
+    <!--        <item></item>-->
+    <!--        <item></item>-->
+    <!--        <item></item>-->
 
-        <item></item>
-        <item></item>
-        <item></item>
-        <item></item>
-        <item></item>
-    </string-array>
+    <!--        <item></item>-->
+    <!--        <item></item>-->
+    <!--        <item></item>-->
+    <!--        <item></item>-->
+    <!--        <item></item>-->
+    <!--    </string-array>-->
 
-    <string-array name="list_prism_option_c">
-        <item></item>
-        <item></item>
-        <item></item>
-        <item></item>
+    <!--    <string-array name="list_prism_option_c">-->
+    <!--        <item></item>-->
+    <!--        <item></item>-->
+    <!--        <item></item>-->
+    <!--        <item></item>-->
 
-        <item></item>
-        <item></item>
-        <item></item>
-        <item></item>
-        <item></item>
-    </string-array>
+    <!--        <item></item>-->
+    <!--        <item></item>-->
+    <!--        <item></item>-->
+    <!--        <item></item>-->
+    <!--        <item></item>-->
+    <!--    </string-array>-->
 
-    <string-array name="list_prism_option_d">
-        <item></item>
-        <item></item>
-        <item></item>
-        <item></item>
+    <!--    <string-array name="list_prism_option_d">-->
+    <!--        <item></item>-->
+    <!--        <item></item>-->
+    <!--        <item></item>-->
+    <!--        <item></item>-->
 
-        <item></item>
-        <item></item>
-        <item></item>
-        <item></item>
-        <item></item>
-    </string-array>
+    <!--        <item></item>-->
+    <!--        <item></item>-->
+    <!--        <item></item>-->
+    <!--        <item></item>-->
+    <!--        <item></item>-->
+    <!--    </string-array>-->
 
-    <string-array name="list_prism_key">
-        <item></item>
-        <item></item>
-        <item></item>
-        <item></item>
+    <!--    <string-array name="list_prism_key">-->
+    <!--        <item></item>-->
+    <!--        <item></item>-->
+    <!--        <item></item>-->
+    <!--        <item></item>-->
 
-        <item></item>
-        <item></item>
-        <item></item>
-        <item></item>
-        <item></item>
-    </string-array>
+    <!--        <item></item>-->
+    <!--        <item></item>-->
+    <!--        <item></item>-->
+    <!--        <item></item>-->
+    <!--        <item></item>-->
+    <!--    </string-array>-->
 
-    <string-array name="list_prism_explanation">
-        <item></item>
-        <item></item>
-        <item></item>
-        <item></item>
+    <!--    <string-array name="list_prism_explanation">-->
+    <!--        <item></item>-->
+    <!--        <item></item>-->
+    <!--        <item></item>-->
+    <!--        <item></item>-->
 
-        <item></item>
-        <item></item>
-        <item></item>
-        <item></item>
-        <item></item>
-    </string-array>
+    <!--        <item></item>-->
+    <!--        <item></item>-->
+    <!--        <item></item>-->
+    <!--        <item></item>-->
+    <!--        <item></item>-->
+    <!--    </string-array>-->
 
-    <string-array name="list_pyramid_quest">
-        <item></item>
-        <item></item>
-        <item></item>
-        <item></item>
+    <!--    <string-array name="list_pyramid_quest">-->
+    <!--        <item></item>-->
+    <!--        <item></item>-->
+    <!--        <item></item>-->
+    <!--        <item></item>-->
 
-        <item></item>
-        <item></item>
-        <item></item>
-        <item></item>
-        <item></item>
-    </string-array>
+    <!--        <item></item>-->
+    <!--        <item></item>-->
+    <!--        <item></item>-->
+    <!--        <item></item>-->
+    <!--        <item></item>-->
+    <!--    </string-array>-->
 
-    <string-array name="list_pyramid_option_a">
-        <item></item>
-        <item></item>
-        <item></item>
-        <item></item>
+    <!--    <string-array name="list_pyramid_option_a">-->
+    <!--        <item></item>-->
+    <!--        <item></item>-->
+    <!--        <item></item>-->
+    <!--        <item></item>-->
 
-        <item></item>
-        <item></item>
-        <item></item>
-        <item></item>
-        <item></item>
-    </string-array>
+    <!--        <item></item>-->
+    <!--        <item></item>-->
+    <!--        <item></item>-->
+    <!--        <item></item>-->
+    <!--        <item></item>-->
+    <!--    </string-array>-->
 
-    <string-array name="list_pyramid_option_b">
-        <item></item>
-        <item></item>
-        <item></item>
-        <item></item>
+    <!--    <string-array name="list_pyramid_option_b">-->
+    <!--        <item></item>-->
+    <!--        <item></item>-->
+    <!--        <item></item>-->
+    <!--        <item></item>-->
 
-        <item></item>
-        <item></item>
-        <item></item>
-        <item></item>
-        <item></item>
-    </string-array>
+    <!--        <item></item>-->
+    <!--        <item></item>-->
+    <!--        <item></item>-->
+    <!--        <item></item>-->
+    <!--        <item></item>-->
+    <!--    </string-array>-->
 
-    <string-array name="list_pyramid_option_c">
-        <item></item>
-        <item></item>
-        <item></item>
-        <item></item>
+    <!--    <string-array name="list_pyramid_option_c">-->
+    <!--        <item></item>-->
+    <!--        <item></item>-->
+    <!--        <item></item>-->
+    <!--        <item></item>-->
 
-        <item></item>
-        <item></item>
-        <item></item>
-        <item></item>
-        <item></item>
-    </string-array>
+    <!--        <item></item>-->
+    <!--        <item></item>-->
+    <!--        <item></item>-->
+    <!--        <item></item>-->
+    <!--        <item></item>-->
+    <!--    </string-array>-->
 
-    <string-array name="list_pyramid_option_d">
-        <item></item>
-        <item></item>
-        <item></item>
-        <item></item>
+    <!--    <string-array name="list_pyramid_option_d">-->
+    <!--        <item></item>-->
+    <!--        <item></item>-->
+    <!--        <item></item>-->
+    <!--        <item></item>-->
 
-        <item></item>
-        <item></item>
-        <item></item>
-        <item></item>
-        <item></item>
-    </string-array>
+    <!--        <item></item>-->
+    <!--        <item></item>-->
+    <!--        <item></item>-->
+    <!--        <item></item>-->
+    <!--        <item></item>-->
+    <!--    </string-array>-->
 
-    <string-array name="list_pyramid_key">
-        <item></item>
-        <item></item>
-        <item></item>
-        <item></item>
+    <!--    <string-array name="list_pyramid_key">-->
+    <!--        <item></item>-->
+    <!--        <item></item>-->
+    <!--        <item></item>-->
+    <!--        <item></item>-->
 
-        <item></item>
-        <item></item>
-        <item></item>
-        <item></item>
-        <item></item>
-    </string-array>
+    <!--        <item></item>-->
+    <!--        <item></item>-->
+    <!--        <item></item>-->
+    <!--        <item></item>-->
+    <!--        <item></item>-->
+    <!--    </string-array>-->
 
-    <string-array name="list_pyramid_explanation">
-        <item></item>
-        <item></item>
-        <item></item>
-        <item></item>
+    <!--    <string-array name="list_pyramid_explanation">-->
+    <!--        <item></item>-->
+    <!--        <item></item>-->
+    <!--        <item></item>-->
+    <!--        <item></item>-->
 
-        <item></item>
-        <item></item>
-        <item></item>
-        <item></item>
-        <item></item>
-    </string-array>
+    <!--        <item></item>-->
+    <!--        <item></item>-->
+    <!--        <item></item>-->
+    <!--        <item></item>-->
+    <!--        <item></item>-->
+    <!--    </string-array>-->
 
-    <string-array name="list_final_quest">
-        <item></item>
-        <item></item>
-        <item></item>
-        <item></item>
+    <!--    <string-array name="list_final_quest">-->
+    <!--        <item></item>-->
+    <!--        <item></item>-->
+    <!--        <item></item>-->
+    <!--        <item></item>-->
 
-        <item></item>
-        <item></item>
-        <item></item>
-        <item></item>
-        <item></item>
-    </string-array>
+    <!--        <item></item>-->
+    <!--        <item></item>-->
+    <!--        <item></item>-->
+    <!--        <item></item>-->
+    <!--        <item></item>-->
+    <!--    </string-array>-->
 
-    <string-array name="list_final_option_a">
-        <item></item>
-        <item></item>
-        <item></item>
-        <item></item>
+    <!--    <string-array name="list_final_option_a">-->
+    <!--        <item></item>-->
+    <!--        <item></item>-->
+    <!--        <item></item>-->
+    <!--        <item></item>-->
 
-        <item></item>
-        <item></item>
-        <item></item>
-        <item></item>
-        <item></item>
-    </string-array>
+    <!--        <item></item>-->
+    <!--        <item></item>-->
+    <!--        <item></item>-->
+    <!--        <item></item>-->
+    <!--        <item></item>-->
+    <!--    </string-array>-->
 
-    <string-array name="list_final_option_b">
-        <item></item>
-        <item></item>
-        <item></item>
-        <item></item>
+    <!--    <string-array name="list_final_option_b">-->
+    <!--        <item></item>-->
+    <!--        <item></item>-->
+    <!--        <item></item>-->
+    <!--        <item></item>-->
 
-        <item></item>
-        <item></item>
-        <item></item>
-        <item></item>
-        <item></item>
-    </string-array>
+    <!--        <item></item>-->
+    <!--        <item></item>-->
+    <!--        <item></item>-->
+    <!--        <item></item>-->
+    <!--        <item></item>-->
+    <!--    </string-array>-->
 
-    <string-array name="list_final_option_c">
-        <item></item>
-        <item></item>
-        <item></item>
-        <item></item>
+    <!--    <string-array name="list_final_option_c">-->
+    <!--        <item></item>-->
+    <!--        <item></item>-->
+    <!--        <item></item>-->
+    <!--        <item></item>-->
 
-        <item></item>
-        <item></item>
-        <item></item>
-        <item></item>
-        <item></item>
-    </string-array>
+    <!--        <item></item>-->
+    <!--        <item></item>-->
+    <!--        <item></item>-->
+    <!--        <item></item>-->
+    <!--        <item></item>-->
+    <!--    </string-array>-->
 
-    <string-array name="list_final_option_d">
-        <item></item>
-        <item></item>
-        <item></item>
-        <item></item>
+    <!--    <string-array name="list_final_option_d">-->
+    <!--        <item></item>-->
+    <!--        <item></item>-->
+    <!--        <item></item>-->
+    <!--        <item></item>-->
 
-        <item></item>
-        <item></item>
-        <item></item>
-        <item></item>
-        <item></item>
-    </string-array>
+    <!--        <item></item>-->
+    <!--        <item></item>-->
+    <!--        <item></item>-->
+    <!--        <item></item>-->
+    <!--        <item></item>-->
+    <!--    </string-array>-->
 
-    <string-array name="list_final_key">
-        <item></item>
-        <item></item>
-        <item></item>
-        <item></item>
+    <!--    <string-array name="list_final_key">-->
+    <!--        <item></item>-->
+    <!--        <item></item>-->
+    <!--        <item></item>-->
+    <!--        <item></item>-->
 
-        <item></item>
-        <item></item>
-        <item></item>
-        <item></item>
-        <item></item>
-    </string-array>
+    <!--        <item></item>-->
+    <!--        <item></item>-->
+    <!--        <item></item>-->
+    <!--        <item></item>-->
+    <!--        <item></item>-->
+    <!--    </string-array>-->
 
-    <string-array name="list_final_explanation">
-        <item></item>
-        <item></item>
-        <item></item>
-        <item></item>
+    <!--    <string-array name="list_final_explanation">-->
+    <!--        <item></item>-->
+    <!--        <item></item>-->
+    <!--        <item></item>-->
+    <!--        <item></item>-->
 
-        <item></item>
-        <item></item>
-        <item></item>
-        <item></item>
-        <item></item>
-    </string-array>
+    <!--        <item></item>-->
+    <!--        <item></item>-->
+    <!--        <item></item>-->
+    <!--        <item></item>-->
+    <!--        <item></item>-->
+    <!--    </string-array>-->
 
-    <string-array name="list_">
-        <item></item>
-        <item></item>
-        <item></item>
-        <item></item>
+    <!--    <string-array name="list_">-->
+    <!--        <item></item>-->
+    <!--        <item></item>-->
+    <!--        <item></item>-->
+    <!--        <item></item>-->
 
-        <item></item>
-        <item></item>
-        <item></item>
-        <item></item>
-        <item></item>
-    </string-array>
+    <!--        <item></item>-->
+    <!--        <item></item>-->
+    <!--        <item></item>-->
+    <!--        <item></item>-->
+    <!--        <item></item>-->
+    <!--    </string-array>-->
 </resources>

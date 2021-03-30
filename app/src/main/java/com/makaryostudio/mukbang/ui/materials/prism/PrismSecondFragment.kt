@@ -36,7 +36,7 @@ class PrismSecondFragment : Fragment() {
 
         binding.toolbar.title = "Prisma"
 
-        binding.pdfMaterials.fromAsset("mat_prism_2")
+        binding.pdfMaterials.fromAsset("mat_prism_2.pdf")
             .enableSwipe(true)
             .enableDoubletap(true)
             .swipeHorizontal(false)

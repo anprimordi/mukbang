@@ -22,7 +22,7 @@ class MaterialsViewModel(materialsCode: Int) : ViewModel() {
         _code.value = materialsCode
 
         _title.value = MaterialsData.listMaterials[code.value!!].title
-        _pdfSource.value = MaterialsData.listMaterials[code.value!!].fileSource
+        _pdfSource.value = MaterialsData.listMaterials[materialsCode].fileSource
     }
 
     fun completeMaterials(code: Int) {

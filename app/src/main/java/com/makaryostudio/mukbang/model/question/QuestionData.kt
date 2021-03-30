@@ -117,6 +117,18 @@ object QuestionData {
                 "t = 8 cm\n" +
                 "\n" +
                 "Jadi tinggi balok tersebut adalah 8 cm.",
+        "Untuk mencari tinggi balok tersebut gunakan rumus luas permukaan balok yaitu:\n" +
+                "L = 2(p.l + p.t + l.t)\n" +
+                "376 cm2 = 2(10 cm.6 cm + 10 cm.t + 6 cm.t)\n" +
+                "376 cm2 = 2 (60 cm2 +10 cm.t +6 cm.t)\n" +
+                "376 cm2 = 2(60 cm2 + 16 cm.t)\n" +
+                "376 cm2 = 120 cm2 + 32 cm.t\n" +
+                "376 cm2 – 120 cm2 = 32 cm.t\n" +
+                "256 cm2 = 32 cm.t\n" +
+                "t = 256 cm2/32 cm\n" +
+                "t = 8 cm\n" +
+                "\n" +
+                "Jadi tinggi balok tersebut adalah 8 cm.",
         "Untuk menjawab soal ini anda harus paham terlebih dahulu konsep volume kubus dan  volume balok. Karena volume balok sama dengan volume kubus maka Anda harus mencari panjang rusuk dari kubus tersebut yaitu\n" +
                 "V = s3\n" +
                 "1000 cm3 = s3\n" +

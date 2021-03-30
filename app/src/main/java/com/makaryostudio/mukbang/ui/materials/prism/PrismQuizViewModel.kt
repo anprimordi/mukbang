@@ -5,21 +5,25 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 
 class PrismQuizViewModel : ViewModel() {
-    val questionOneDrop = MutableLiveData<String>()
-    val questionOne: LiveData<String>
-        get() = questionOneDrop
+    val _question = MutableLiveData<String>()
+    val question: LiveData<String>
+        get() = _question
 
-    val questionTwoDrop = MutableLiveData<String>()
-    val questionTwo: LiveData<String>
-        get() = questionTwoDrop
+    val keyOneDrop = MutableLiveData<String>()
+    val keyOne: LiveData<String>
+        get() = keyOneDrop
 
-    val questionThreeDrop = MutableLiveData<String>()
-    val questionThree: LiveData<String>
-        get() = questionThreeDrop
+    val keyTwoDrop = MutableLiveData<String>()
+    val keyTwo: LiveData<String>
+        get() = keyTwoDrop
 
-    val questionFourDrop = MutableLiveData<String>()
-    val questionFour: LiveData<String>
-        get() = questionFourDrop
+    val keyThreeDrop = MutableLiveData<String>()
+    val keyThree: LiveData<String>
+        get() = keyThreeDrop
+
+    val keyFourDrop = MutableLiveData<String>()
+    val keyFour: LiveData<String>
+        get() = keyFourDrop
 
     private val _answerOne = MutableLiveData<String>()
     val answerOne: LiveData<String>
@@ -58,10 +62,12 @@ class PrismQuizViewModel : ViewModel() {
         get() = _score
 
     init {
-        questionOneDrop.value = ""
-        questionTwoDrop.value = ""
-        questionThreeDrop.value = ""
-        questionFourDrop.value = ""
+        _question.value =
+            "Perhatikan model prisma dibawah ini dan cocokkan dengan jaring-jaring yang sebangun! (drag and drop)"
+        keyOneDrop.value = ""
+        keyTwoDrop.value = ""
+        keyThreeDrop.value = ""
+        keyFourDrop.value = ""
         _answerOne.value = "Prisma segi lima"
         _answerTwo.value = "Prisma segi delapan"
         _answerThree.value = "Prisma segi tiga"

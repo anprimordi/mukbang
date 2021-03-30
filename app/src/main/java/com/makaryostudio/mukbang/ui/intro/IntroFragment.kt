@@ -1,32 +1,47 @@
 package com.makaryostudio.mukbang.ui.intro
 
-import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.makaryostudio.mukbang.R
+import androidx.appcompat.widget.Toolbar
+import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
+import androidx.navigation.ui.AppBarConfiguration
+import androidx.navigation.ui.NavigationUI
+import androidx.navigation.ui.setupWithNavController
+import com.github.barteksc.pdfviewer.util.FitPolicy
+import com.makaryostudio.mukbang.databinding.IntroFragmentBinding
 
 class IntroFragment : Fragment() {
 
-    companion object {
-        fun newInstance() = IntroFragment()
-    }
-
-    private lateinit var viewModel: IntroViewModel
+    private lateinit var binding: IntroFragmentBinding
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.intro_fragment, container, false)
+        binding = IntroFragmentBinding.inflate(inflater)
+
+        setupToolbar(binding.toolbar)
+        return binding.root
     }
 
-    override fun onActivityCreated(savedInstanceState: Bundle?) {
-        super.onActivityCreated(savedInstanceState)
-        viewModel = ViewModelProvider(this).get(IntroViewModel::class.java)
-        // TODO: Use the ViewModel
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        binding.pdfIntroduction.fromAsset("intro.pdf")
+            .enableSwipe(true)
+            .enableDoubletap(true)
+            .swipeHorizontal(false)
+            .pageFitPolicy(FitPolicy.BOTH)
+            .spacing(0)
+            .load()
     }
 
+    private fun setupToolbar(toolbar: Toolbar) {
+        val appBarConfiguration = AppBarConfiguration(findNavController().graph)
+        toolbar.setupWithNavController(findNavController(), appBarConfiguration)
+        NavigationUI.setupWithNavController(toolbar, findNavController(), appBarConfiguration)
+    }
 }

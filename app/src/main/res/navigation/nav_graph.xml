@@ -23,7 +23,8 @@
             app:destination="@id/loginFragment" />
         <action
             android:id="@+id/action_landingFragment_to_homeFragment"
-            app:destination="@id/homeFragment" />
+            app:destination="@id/homeFragment"
+            app:popUpTo="@id/landingFragment" />
         <action
             android:id="@+id/action_landingFragment_to_developerFragment"
             app:destination="@id/developerFragment" />
@@ -86,6 +87,7 @@
         <action
             android:id="@+id/action_materialsFragment_to_homeFragment"
             app:destination="@id/homeFragment"
+            app:popUpTo="@id/homeFragment"
             app:popUpToInclusive="true" />
         <action
             android:id="@+id/action_materialsFragment_to_prismQuizFragment"
@@ -113,7 +115,7 @@
     <fragment
         android:id="@+id/introFragment"
         android:name="com.makaryostudio.mukbang.ui.intro.IntroFragment"
-        android:label="IntroFragment" />
+        android:label="Pendahuluan" />
     <fragment
         android:id="@+id/manualFragment"
         android:name="com.makaryostudio.mukbang.ui.manual.ManualFragment"
@@ -144,7 +146,9 @@
         android:label="PrismSecondFragment">
         <action
             android:id="@+id/action_prismSecondFragment_to_homeFragment"
-            app:destination="@id/homeFragment" />
+            app:destination="@id/homeFragment"
+            app:popUpTo="@id/homeFragment"
+            app:popUpToInclusive="true" />
     </fragment>
     <fragment
         android:id="@+id/prismQuizFragment"
@@ -157,5 +161,5 @@
     <fragment
         android:id="@+id/conceptMapFragment"
         android:name="com.makaryostudio.mukbang.ui.conceptmap.ConceptMapFragment"
-        android:label="ConceptMapFragment" />
+        android:label="Peta Konsep" />
 </navigation>
