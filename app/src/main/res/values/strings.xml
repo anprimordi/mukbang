@@ -22,6 +22,7 @@
     <string name="error_must_be_answered">Harus dijawab ya!</string>
     <string name="error_incorrect_answer">Ada yang masih salah nih!</string>
     <string name="introduction_title">Pendahuluan</string>
+    <string name="home_view_score_text">Llihat skor kamu di sini</string>
 
     <!--    <string-array name="list_cube_quest">-->
     <!--        <item>Rama akan membuat 3 buah kerangka balok yang berukuran 6 cm x 6 cm x 3 cm terbuat dari kawat. Jika kawat yang tersedia 2 m, panjang sisa kawat adalah …</item>-->
