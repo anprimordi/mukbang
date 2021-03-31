@@ -155,7 +155,7 @@
     <fragment
         android:id="@+id/prismQuizFragment"
         android:name="com.makaryostudio.mukbang.ui.materials.prism.PrismQuizFragment"
-        android:label="PrismQuizFragment">
+        android:label="Prisma">
         <action
             android:id="@+id/action_prismQuizFragment_to_prismSecondFragment"
             app:destination="@id/prismSecondFragment" />

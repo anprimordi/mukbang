@@ -6,7 +6,6 @@ import android.content.ClipDescription
 import android.graphics.Color
 import android.os.Build
 import android.os.Bundle
-import android.util.Log
 import android.view.*
 import android.widget.TextView
 import android.widget.Toast
@@ -23,6 +22,7 @@ import com.makaryostudio.mukbang.R
 import com.makaryostudio.mukbang.databinding.PrismQuizFragmentBinding
 import com.makaryostudio.mukbang.utils.DragShadowBuilder
 
+@Suppress("DEPRECATION")
 class PrismQuizFragment : Fragment() {
 
     private lateinit var binding: PrismQuizFragmentBinding
@@ -93,7 +93,7 @@ class PrismQuizFragment : Fragment() {
         }
     }
 
-    @SuppressLint("ClickableViewAccessibility")
+    @SuppressLint("ClickableViewAccessibility", "ObsoleteSdkInt")
     private fun onDragAndDrop(from: TextView, to: TextView) {
         from.tag = from.text
 
@@ -123,12 +123,6 @@ class PrismQuizFragment : Fragment() {
             } else {
                 view.startDrag(dragData, myShadow, null, 0)
             }
-
-//            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
-//                view.startDragAndDrop(dragData, myShadow, null, 0)
-//            } else {
-//                view.startDrag(dragData, myShadow, null, 0)
-//            }
         }
 
         when (to.id) {
@@ -418,9 +412,11 @@ class PrismQuizFragment : Fragment() {
         toolbar.setupWithNavController(findNavController(), appBarConfiguration)
         NavigationUI.setupWithNavController(toolbar, findNavController(), appBarConfiguration)
 
-        toolbar.setOnMenuItemClickListener {
-            when (it.itemId) {
+        toolbar.title = getString(R.string.prism_title)
+        toolbar.setOnMenuItemClickListener { menuItem ->
+            when (menuItem.itemId) {
                 R.id.menu_complete -> {
+                    viewModel.resetScore()
                     viewModel.keyOne.observe(viewLifecycleOwner, {
                         if (it == "") {
                             binding.textQuestionOne.apply {
@@ -461,17 +457,14 @@ class PrismQuizFragment : Fragment() {
 
                     checkKey(answerA, answerB, answerC, answerD)
 
-                    viewModel.score.observe(viewLifecycleOwner, { score ->
-                        Log.e("TEST", "PRISM QUIZ SCORE: $score")
-                        when (score) {
-                            4 -> findNavController().navigate(R.id.action_prismQuizFragment_to_prismSecondFragment)
-                            else -> Toast.makeText(
-                                requireContext(),
-                                getString(R.string.error_incorrect_answer),
-                                Toast.LENGTH_SHORT
-                            ).show()
-                        }
-                    })
+                    when (viewModel.score.value) {
+                        4 -> findNavController().navigate(R.id.action_prismQuizFragment_to_prismSecondFragment)
+                        else -> Toast.makeText(
+                            requireContext(),
+                            getString(R.string.error_incorrect_answer),
+                            Toast.LENGTH_SHORT
+                        ).show()
+                    }
                     true
                 }
                 else -> {

@@ -6,7 +6,7 @@ object MaterialsData {
     var listMaterials: ArrayList<Materials> = arrayListOf(
         Materials(
             R.drawable.ic_cube_24,
-            "Kubus",
+            "Kubus & Balok",
             "mat_cube.pdf"
         ),
         Materials(

@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Mukbang</string>
+    <string name="app_name">MUKBANG</string>
     <string name="splashscreen_app_logo_img">app logo</string>
     <string name="app_fullname_title">Mobile UKBM Bangun Ruang</string>
     <string name="action_start">mulai</string>
@@ -31,9 +31,13 @@
     <string name="ref_1_text">Kementerian Pendidikan dan Kebudayaan. 2016. Buku Siswa Mata Pelajaran Matematika Pekerti Jakarta: Kementerian Pendidikan dan Kebudayaan.</string>
     <string name="ref_2_text">Kementerian Pendidikan dan Kebudayaan. 2016. Buku Guru Mata Pelajaran Matematika Jakarta: Kementerian Pendidikan dan Kebudayaan</string>
     <string name="ref_3_text">http://fikri-ravansyah07.blogspot.com/2014/05/soal-dan-pembahasan-matematika-kubus.html</string>
-    <string name="ref_4_text">\thttps://idschool.net/contoh-soal-bangun-ruang-sisi-datar-matematika-smp-2/</string>
+    <string name="ref_4_text">https://idschool.net/contoh-soal-bangun-ruang-sisi-datar-matematika-smp-2/</string>
     <string name="ref__text">https://youtu.be/1XOvoj0_DDs</string>
     <string name="ref_title">Daftar Pustaka</string>
+    <string name="cube_title">Kubus &amp; Balok</string>
+    <string name="prism_title">Prisma</string>
+    <string name="pyramid_title">Limas</string>
+    <string name="evaluation_title">Evaluasi</string>
 
     <!--    <string-array name="list_cube_quest">-->
     <!--        <item>Rama akan membuat 3 buah kerangka balok yang berukuran 6 cm x 6 cm x 3 cm terbuat dari kawat. Jika kawat yang tersedia 2 m, panjang sisa kawat adalah …</item>-->

@@ -85,11 +85,23 @@ class HomeFragment : Fragment() {
             findNavController().navigate(R.id.action_homeFragment_to_introFragment)
         }
 
-        binding.imageClue.setOnClickListener {
+        binding.textIntro.setOnClickListener {
+            findNavController().navigate(R.id.action_homeFragment_to_introFragment)
+        }
+
+        binding.imageManual.setOnClickListener {
+            findNavController().navigate(R.id.action_homeFragment_to_manualFragment)
+        }
+
+        binding.textManual.setOnClickListener {
             findNavController().navigate(R.id.action_homeFragment_to_manualFragment)
         }
 
         binding.imageConcept.setOnClickListener {
+            findNavController().navigate(R.id.action_homeFragment_to_conceptMapFragment)
+        }
+
+        binding.textConcept.setOnClickListener {
             findNavController().navigate(R.id.action_homeFragment_to_conceptMapFragment)
         }
     }

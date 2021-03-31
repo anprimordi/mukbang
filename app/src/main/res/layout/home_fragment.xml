@@ -73,7 +73,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="24dp"
                 android:background="@color/white"
-                app:layout_constraintEnd_toStartOf="@id/image_clue"
+                app:layout_constraintEnd_toStartOf="@id/image_manual"
                 app:layout_constraintStart_toEndOf="@id/layout_identity"
                 app:layout_constraintTop_toTopOf="parent"
                 app:shapeAppearance="?attr/shapeAppearanceMediumComponent"
@@ -81,7 +81,7 @@
                 app:srcCompat="@drawable/ic_info_24" />
 
             <com.google.android.material.imageview.ShapeableImageView
-                android:id="@+id/image_clue"
+                android:id="@+id/image_manual"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="24dp"
@@ -100,7 +100,7 @@
                 android:layout_marginTop="24dp"
                 android:background="@color/white"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@id/image_clue"
+                app:layout_constraintStart_toEndOf="@id/image_manual"
                 app:layout_constraintTop_toTopOf="parent"
                 app:shapeAppearance="?attr/shapeAppearanceMediumComponent"
                 app:shapeAppearanceOverlay="@style/roundedImageView"
@@ -111,11 +111,10 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="4dp"
-                android:layout_marginEnd="4dp"
                 android:gravity="center"
                 android:text="Pendahuluan"
                 android:textColor="@android:color/primary_text_dark"
-                android:textSize="13sp"
+                android:textSize="10sp"
                 android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="@id/image_intro"
                 app:layout_constraintStart_toStartOf="@id/image_intro"
@@ -125,27 +124,25 @@
                 android:id="@+id/text_manual"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="4dp"
                 android:layout_marginTop="4dp"
                 android:gravity="center"
                 android:text="Petunjuk"
                 android:textColor="@android:color/primary_text_dark"
-                android:textSize="13sp"
+                android:textSize="10sp"
                 android:textStyle="bold"
-                app:layout_constraintEnd_toEndOf="@id/image_clue"
-                app:layout_constraintStart_toStartOf="@id/image_clue"
-                app:layout_constraintTop_toBottomOf="@id/image_clue" />
+                app:layout_constraintEnd_toEndOf="@id/image_manual"
+                app:layout_constraintStart_toStartOf="@id/image_manual"
+                app:layout_constraintTop_toBottomOf="@id/image_manual" />
 
             <TextView
                 android:id="@+id/text_concept"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="8dp"
                 android:layout_marginTop="4dp"
                 android:gravity="center"
                 android:text="Peta Konsep"
                 android:textColor="@android:color/primary_text_dark"
-                android:textSize="13sp"
+                android:textSize="10sp"
                 android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="@id/image_concept"
                 app:layout_constraintStart_toStartOf="@id/image_concept"
@@ -200,7 +197,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:orientation="horizontal"
-                        android:paddingHorizontal="24dp" />
+                        android:paddingHorizontal="22dp" />
 
                 </androidx.core.widget.NestedScrollView>
 
@@ -239,7 +236,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:orientation="horizontal"
-                        android:paddingHorizontal="24dp" />
+                        android:paddingHorizontal="22dp" />
 
                 </androidx.core.widget.NestedScrollView>
 
